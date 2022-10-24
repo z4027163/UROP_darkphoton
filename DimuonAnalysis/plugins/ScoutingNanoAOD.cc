@@ -131,9 +131,9 @@ private:
   const edm::EDGetTokenT<std::vector<Run3ScoutingMuon> >      muonsToken;
   const edm::EDGetTokenT<std::vector<Run3ScoutingElectron> >  	electronsToken;
   const edm::EDGetTokenT<std::vector<Run3ScoutingPhoton> >  	photonsToken;
-//  const edm::EDGetTokenT<std::vector<Run3ScoutingParticle> >  	pfcandsToken;
-//  const edm::EDGetTokenT<std::vector<Run3ScoutingPFJet> >  	pfjetsToken;
-// const edm::EDGetTokenT<std::vector<Run3ScoutingTrack> >  	tracksToken;
+  const edm::EDGetTokenT<std::vector<Run3ScoutingParticle> >  	pfcandsToken;
+  const edm::EDGetTokenT<std::vector<Run3ScoutingPFJet> >  	pfjetsToken;
+  const edm::EDGetTokenT<std::vector<Run3ScoutingTrack> >  	tracksToken;
   
 
   //const edm::EDGetTokenT<GenEventInfoProduct>             genEvtInfoToken;
@@ -229,7 +229,7 @@ private:
   vector<Float16_t>       Muon_trkdszerror;
   vector<Float16_t>       Muon_trkdsz;
   int muontvtxind[max_mu];
-/*
+
   //PFJets
   const static int 	max_jet = 1000;
   UInt_t n_jet;
@@ -268,6 +268,7 @@ private:
   vector<Float16_t>	    pfcandpdgid;
   vector<Float16_t>	    pfcandvertex;
 
+/*
   UInt_t n_fatjet;
   vector<Float16_t> FatJet_area;
   vector<Float16_t> FatJet_eta;
@@ -301,9 +302,9 @@ ScoutingNanoAOD::ScoutingNanoAOD(const edm::ParameterSet& iConfig):
   electronsToken           (consumes<std::vector<Run3ScoutingElectron> >         (iConfig.getParameter<edm::InputTag>("electrons"))), 
   photonsToken           (consumes<std::vector<Run3ScoutingPhoton> >         (iConfig.getParameter<edm::InputTag>("photons"))), 
 
-//  pfcandsToken             (consumes<std::vector<Run3ScoutingParticle> >         (iConfig.getParameter<edm::InputTag>("pfcands"))), 
-//  pfjetsToken              (consumes<std::vector<Run3ScoutingPFJet> >            (iConfig.getParameter<edm::InputTag>("pfjets"))),
-// tracksToken              (consumes<std::vector<Run3ScoutingTrack> >            (iConfig.getParameter<edm::InputTag>("tracks"))), 
+  pfcandsToken             (consumes<std::vector<Run3ScoutingParticle> >         (iConfig.getParameter<edm::InputTag>("pfcands"))), 
+  pfjetsToken              (consumes<std::vector<Run3ScoutingPFJet> >            (iConfig.getParameter<edm::InputTag>("pfjets"))),
+  tracksToken              (consumes<std::vector<Run3ScoutingTrack> >            (iConfig.getParameter<edm::InputTag>("tracks"))), 
 //  pileupInfoToken          (consumes<std::vector<PileupSummaryInfo> >        (iConfig.getParameter<edm::InputTag>("pileupinfo"))),
 //  gensToken                (consumes<std::vector<reco::GenParticle> >        (iConfig.getParameter<edm::InputTag>("gens"))),
   //genEvtInfoToken          (consumes<GenEventInfoProduct>                    (iConfig.getParameter<edm::InputTag>("geneventinfo"))),    
@@ -367,7 +368,7 @@ tree->Branch("Electron_sigmaietaieta"       ,&Electron_sigmaietaieta 	 );
   tree->Branch("Photon_ecaliso"             ,&Photon_ecaliso 		);
   tree->Branch("Photon_HoE"            	   ,&Photon_HoE 			);
   tree->Branch("Photon_sigmaietaieta"       ,&Photon_sigmaietaieta		 );
-/*
+
   tree->Branch("n_pfcand"            	   ,&n_pfcand 		,"n_pfcand/i"		);	
   tree->Branch("pfcandpt"        	   ,&pfcandpt 		 );
   tree->Branch("pfcandeta"            	   ,&pfcandeta 		 );
@@ -375,7 +376,7 @@ tree->Branch("Electron_sigmaietaieta"       ,&Electron_sigmaietaieta 	 );
 // tree->Branch("pfcandm"            	   ,&pfcandm 		 );
   tree->Branch("pfcandpdgid"               ,&pfcandpdgid		 );
   tree->Branch("pfcandvertex"              ,&pfcandvertex 	 );
-*/
+
   tree->Branch("n_mu"            	   ,&n_mu 			, "n_mu/i"		);
   tree->Branch("Muon_pt", &Muon_pt	);
   tree->Branch("Muon_eta", &Muon_eta	);
@@ -408,7 +409,7 @@ tree->Branch("Electron_sigmaietaieta"       ,&Electron_sigmaietaieta 	 );
   tree->Branch("Muon_trkdszerror",   &Muon_trkdszerror    );
   tree->Branch("Muon_trkdsz",    &Muon_trkdsz   );
 
-/*
+
   tree->Branch("n_jet"            	   	,&n_jet 			, "n_jet/i"		);
   tree->Branch("Jet_pt"            	   	,&Jet_pt 				 );
   tree->Branch("Jet_eta"            	   	,&Jet_eta 			 );
@@ -432,8 +433,8 @@ tree->Branch("Electron_sigmaietaieta"       ,&Electron_sigmaietaieta 	 );
   tree->Branch("Jet_HFEMMultiplicity"            	   ,&Jet_HFEMMultiplicity 		 );
   tree->Branch("Jet_csv"            	   	,&Jet_csv 		 );
   tree->Branch("Jet_mvaDiscriminator"            	   ,&Jet_mvaDiscriminator 		 );
-  tree->Branch("Jet_constituents"            	, "std::vector< vector<int16_t> >"   , &Jet_constituents 		, 32000, 0);
-  
+//  tree->Branch("Jet_constituents"            	, "std::vector< vector<int16_t> >"   , &Jet_constituents 		, 32000, 0);
+/*  
   tree->Branch("FatJet_area",&FatJet_area);
   tree->Branch("FatJet_eta",&FatJet_eta);
   tree->Branch("FatJet_n2b1",&FatJet_n2b1);
@@ -448,7 +449,6 @@ tree->Branch("Electron_sigmaietaieta"       ,&Electron_sigmaietaieta 	 );
   tree->Branch("FatJet_msoftdrop",&FatJet_msoftdrop);
   tree->Branch("FatJet_mtrim",&FatJet_mtrim);
 */  
-
  
 }
 
@@ -475,7 +475,7 @@ void ScoutingNanoAOD::analyze(const edm::Event& iEvent, const edm::EventSetup& i
 
   Handle<vector<Run3ScoutingPhoton> > photonsH;
   iEvent.getByToken(photonsToken, photonsH);
-/*
+
   Handle<vector<Run3ScoutingPFJet> > pfjetsH;
   iEvent.getByToken(pfjetsToken, pfjetsH);
     
@@ -484,34 +484,37 @@ void ScoutingNanoAOD::analyze(const edm::Event& iEvent, const edm::EventSetup& i
 
   Handle<vector<Run3ScoutingTrack> > tracksH;
   iEvent.getByToken(tracksToken, tracksH);
-*/
+
   run = iEvent.eventAuxiliary().run();
   lumSec = iEvent.eventAuxiliary().luminosityBlock();
 
+  //print hlt trigger
+/*
+  const edm::TriggerNames& trigNames = iEvent.triggerNames(*triggerResultsH);
+  for(size_t i = 0; i < triggerResultsH->size(); i++) {
+     cout << "Trigger " << trigNames.triggerName(i) << ": " << (triggerResultsH->accept(i) ? "PASS" : "fail (or not run)") << endl;
+  }
+*/
 
+  trig=0;
   // Which triggers fired
   for (size_t i = 0; i < triggerPathsVector.size(); i++) {
     if (triggerPathsMap[triggerPathsVector[i]] == -1) continue;
-    if (i == 0  && triggerResultsH->accept(triggerPathsMap[triggerPathsVector[i]])) trig +=   1; // DST_L1DoubleMu_CaloScouting_PFScouting
+    if (i == 0  && triggerResultsH->accept(triggerPathsMap[triggerPathsVector[i]])) trig +=   1; // pass scouting
     if (i == 1  && triggerResultsH->accept(triggerPathsMap[triggerPathsVector[i]])) trig +=   2; // DST_DoubleMu3_Mass10_CaloScouting_PFScouting
-    if (i == 2  && triggerResultsH->accept(triggerPathsMap[triggerPathsVector[i]])) trig +=   4; // DST_ZeroBias_CaloScouting_PFScouting
-    if (i == 3  && triggerResultsH->accept(triggerPathsMap[triggerPathsVector[i]])) trig +=   8; // DST_L1HTT_CaloScouting_PFScouting
-    if (i == 4  && triggerResultsH->accept(triggerPathsMap[triggerPathsVector[i]])) trig +=  16; // DST_CaloJet40_CaloScouting_PFScouting
-    if (i == 5  && triggerResultsH->accept(triggerPathsMap[triggerPathsVector[i]])) trig +=  32; // DST_HT250_CaloScouting
-    if (i == 6  && triggerResultsH->accept(triggerPathsMap[triggerPathsVector[i]])) trig +=  64; // DST_HT410_PFScouting
-    if (i == 7  && triggerResultsH->accept(triggerPathsMap[triggerPathsVector[i]])) trig += 128; // DST_HT450_PFScouting
   }
   
 //  Jet_constituents.clear();
   //0.1396
   //built transient tracks, check Vertex fitting
-  edm::ESHandle<TransientTrackBuilder> theB;
-  iSetup.get<TransientTrackRecord>().get("TransientTrackBuilder", theB);
+
+//  edm::ESHandle<TransientTrackBuilder> theB;
+//  iSetup.get<TransientTrackRecord>().get("TransientTrackBuilder", theB);
 
   vector<TransientTrack> t_tks;
   std::unique_ptr<VertexCollection> vertexCollection(new VertexCollection());
 
-  /* for (auto tracks_iter = tracksH->begin(); tracks_iter != tracksH->end(); ++tracks_iter) 
+  for (auto tracks_iter = tracksH->begin(); tracks_iter != tracksH->end(); ++tracks_iter) 
     {
       Particle::PolarLorentzVector pp;
       Particle::LorentzVector p;
@@ -536,6 +539,7 @@ void ScoutingNanoAOD::analyze(const edm::Event& iEvent, const edm::EventSetup& i
       tracks_iter->tk_dxy_dsz_cov(),
       tracks_iter->tk_dsz_Error() * tracks_iter->tk_dsz_Error()
     };
+   /* //so far not using theB
     reco::TrackBase::CovarianceMatrix tk1_cov;
     fillCovariance(tk1_cov, tk1_covdata);
  	Track tk1(tracks_iter->tk_chi2(), 
@@ -545,8 +549,10 @@ void ScoutingNanoAOD::analyze(const edm::Event& iEvent, const edm::EventSetup& i
 	      tracks_iter->tk_charge(),
 	      tk1_cov);
 	TransientTrack ttkp1 = (*theB).build(tk1);
-	t_tks.push_back(ttkp1);
+	t_tks.push_back(ttkp1);*/
     }
+
+   /*
 	KalmanVertexFitter kvf;
       TransientVertex tv = kvf.vertex(t_tks);
   std::cout<<"vertex position: "<<tv.position().x()<<"  "<<tv.position().y()<<std::endl;
@@ -586,7 +592,7 @@ void ScoutingNanoAOD::analyze(const edm::Event& iEvent, const edm::EventSetup& i
     n_pho++;
   }
 
-/*
+
   vector<PseudoJet> fj_part;
   n_pfcand = 0;
     for (auto pfcands_iter = pfcandsH->begin(); pfcands_iter != pfcandsH->end(); ++pfcands_iter) {
@@ -603,7 +609,7 @@ void ScoutingNanoAOD::analyze(const edm::Event& iEvent, const edm::EventSetup& i
 
     n_pfcand++;
   } 
-*/
+
      n_mu=0;
 for (auto muons_iter = muonsH->begin(); muons_iter != muonsH->end(); ++muons_iter) {
  	  Muon_pt.push_back(muons_iter->pt());
@@ -638,7 +644,7 @@ for (auto muons_iter = muonsH->begin(); muons_iter != muonsH->end(); ++muons_ite
     n_mu++;
  }
 
-/*
+
   n_jet = 0;
    for (auto pfjets_iter = pfjetsH->begin(); pfjets_iter != pfjetsH->end(); ++pfjets_iter) {
     Jet_pt.push_back(pfjets_iter->pt());
@@ -669,6 +675,7 @@ for (auto muons_iter = muonsH->begin(); muons_iter != muonsH->end(); ++muons_ite
   }
 
 //FatJet stuff
+/*
   JetDefinition ak8_def = JetDefinition(antikt_algorithm, 0.8);
   double sd_z_cut = 0.10;
   double sd_beta = 0;
@@ -711,9 +718,12 @@ for (auto muons_iter = muonsH->begin(); muons_iter != muonsH->end(); ++muons_ite
     FatJet_tau3.push_back(nSub3.result(j));
     FatJet_tau4.push_back(nSub4.result(j));
   }
-*/  
+*/
+  
  if (doL1) {
+    
     l1GtUtils_->retrieveL1(iEvent,iSetup,algToken_);
+    /*
     	for( int r = 0; r<280; r++){
 	string name ("empty");
 	bool algoName_ = false;
@@ -721,11 +731,13 @@ for (auto muons_iter = muonsH->begin(); muons_iter != muonsH->end(); ++muons_ite
 	cout << "getAlgNameFromBit = " << algoName_  << endl;
 	cout << "L1 bit number = " << r << " ; L1 bit name = " << name << endl;
 	}
+     */
+    cout << "l1seed=" << l1Seeds_.size() <<endl;
     for( unsigned int iseed = 0; iseed < l1Seeds_.size(); iseed++ ) {
       bool l1htbit = 0;	
 			
       l1GtUtils_->getFinalDecisionByName(string(l1Seeds_[iseed]), l1htbit);
-      //cout<<string(l1Seeds_[iseed])<<"  "<<l1htbit<<endl;
+      cout<<string(l1Seeds_[iseed])<<"  "<<l1htbit<<endl;
       l1Result_.push_back( l1htbit );
       }
  }
@@ -791,7 +803,7 @@ void ScoutingNanoAOD::clearVars(){
   Muon_trketaerror.clear();
   Muon_trkdszerror.clear();
   Muon_trkdsz.clear();
-/*
+
   Jet_pt.clear();
   Jet_eta.clear();
   Jet_phi.clear();
@@ -820,6 +832,9 @@ void ScoutingNanoAOD::clearVars(){
   pfcandm.clear();
   pfcandpdgid.clear();
   pfcandvertex.clear();
+
+  l1Result_.clear();
+/*
   FatJet_area.clear();
   FatJet_eta.clear();
   FatJet_n2b1.clear();
@@ -846,14 +861,8 @@ void ScoutingNanoAOD::endJob() {
 void ScoutingNanoAOD::beginRun(edm::Run const& iRun, edm::EventSetup const& iSetup) {
   // HLT paths
 
-  triggerPathsVector.push_back("DST_DoubleMu1_noVtx_CaloScouting_v*");
+  triggerPathsVector.push_back("DST_Run3_PFScoutingPixelTracking_v*");
   triggerPathsVector.push_back("DST_DoubleMu3_noVtx_CaloScouting_v*");
-  triggerPathsVector.push_back("DST_DoubleMu3_noVtx_Mass10_PFScouting_v*");
-  triggerPathsVector.push_back("DST_L1HTT_CaloScouting_PFScouting_v*");
-  triggerPathsVector.push_back("DST_CaloJet40_CaloScouting_PFScouting_v*");
-  triggerPathsVector.push_back("DST_HT250_CaloScouting_v*");
-  triggerPathsVector.push_back("DST_HT410_PFScouting_v*");
-  triggerPathsVector.push_back("DST_HT450_PFScouting_v*");
 
   HLTConfigProvider hltConfig;
   bool changedConfig = false;
