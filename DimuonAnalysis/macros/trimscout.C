@@ -9,7 +9,7 @@
 
 using namespace std;
 
-void trimscout(TString inputfilename = "input.root", const char* outfilename = "./scoutDataMVA_v2.root", bool isMC=false) {
+void trimscout(TString inputfilename = "input.root", const char* outfilename = "./output.root", bool isMC=false) {
 
     TFile* outfile = new TFile(outfilename, "RECREATE");
     TTree* outtree = new TTree("tree", "tree");
@@ -46,9 +46,9 @@ void trimscout(TString inputfilename = "input.root", const char* outfilename = "
         std::vector<unsigned> goodmuons;
         for (int i = 0; i < *nmuon; i++) {
             if(mupt[i]<4 || abs(mueta[i])>1.9) continue;
-            //if(nPixelHits[i]==0) continue;
-            //if(nTrkLayers[i]<=5) continue;
-            //if(muTrkChi2[i]>=10) continue;
+            if(nPixelHits[i]==0) continue;
+            if(nTrkLayers[i]<=5) continue;
+            if(muTrkChi2[i]>=10) continue;
             //if(RelTrackIso[i]>=.15) continue;
             goodmuons.push_back(i);
         }
