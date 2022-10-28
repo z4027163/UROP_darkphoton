@@ -128,6 +128,8 @@ private:
   const edm::InputTag triggerResultsTag;
   const edm::EDGetTokenT<edm::TriggerResults>             	triggerResultsToken;
 
+  const edm::EDGetTokenT<std::vector<Run3ScoutingVertex> >    verticesToken;
+
   const edm::EDGetTokenT<std::vector<Run3ScoutingMuon> >      muonsToken;
   const edm::EDGetTokenT<std::vector<Run3ScoutingElectron> >  	electronsToken;
   const edm::EDGetTokenT<std::vector<Run3ScoutingPhoton> >  	photonsToken;
@@ -160,8 +162,16 @@ private:
   std::vector<std::string>     l1Seeds_;
   std::vector<bool>            l1Result_;
        
-        
-
+  //vertex      
+  UInt_t nvtx;
+  vector<Float16_t>           vtxX;  
+  vector<Float16_t>           vtxY;
+  vector<Float16_t>           vtxZ;
+  vector<Float16_t>           vtxXError;
+  vector<Float16_t>           vtxYError;
+  vector<Float16_t>           vtxZError;
+  vector<Float16_t>           vtxNdof;
+  vector<Float16_t>           vtxChi2;
 
   //Photon
   const static int 	max_pho = 1000;
@@ -296,7 +306,7 @@ private:
 ScoutingNanoAOD::ScoutingNanoAOD(const edm::ParameterSet& iConfig): 
   triggerResultsTag        (iConfig.getParameter<edm::InputTag>("triggerresults")),
   triggerResultsToken      (consumes<edm::TriggerResults>                    (triggerResultsTag)),
-
+  verticesToken            (consumes<std::vector<Run3ScoutingVertex> >           (iConfig.getParameter<edm::InputTag>("vertices"))),
 
   muonsToken               (consumes<std::vector<Run3ScoutingMuon> >             (iConfig.getParameter<edm::InputTag>("muons"))), 
   electronsToken           (consumes<std::vector<Run3ScoutingElectron> >         (iConfig.getParameter<edm::InputTag>("electrons"))), 
@@ -335,13 +345,19 @@ ScoutingNanoAOD::ScoutingNanoAOD(const edm::ParameterSet& iConfig):
     
   tree->Branch("lumSec"		, &lumSec			 , "lumSec/i" );
   tree->Branch("run"			, &run				 , "run/i" );
-  //tree->Branch("nvtx"			, &nvtx				 , "nvtx/i" );
     
   // Triggers
   tree->Branch("trig"                 , &trig                          , "trig/b");
   tree->Branch("l1Result"		, "std::vector<bool>"             ,&l1Result_	, 32000, 0);		
-  // Pileup info
-  //tree->Branch("nvtx"                 , &nvtx                          , "nvtx/i"       );
+  // vertex info
+  tree->Branch("nvtx"                 , &nvtx                          , "nvtx/i"       );
+  tree->Branch("vtxX"                 , &vtxX     );
+  tree->Branch("vtxY"                 , &vtxY     );
+  tree->Branch("vtxZ"                 , &vtxZ     );
+
+  tree->Branch("vtxXError"            , &vtxXError  );
+  tree->Branch("vtxYError"            , &vtxYError  );
+  tree->Branch("vtxZError"            , &vtxZError  );
 
   //Electrons
   tree->Branch("n_ele"            	   ,&n_ele 			, "n_ele/i"		);
@@ -350,13 +366,13 @@ ScoutingNanoAOD::ScoutingNanoAOD(const edm::ParameterSet& iConfig):
   tree->Branch("Electron_phi"               ,&Electron_phi 		 	);
   tree->Branch("Electron_charge"            ,&Electron_charge 		 	);
   tree->Branch("Electron_m"            	   ,&Electron_m 			 );
-tree->Branch("Electron_tkiso"               ,&Electron_tkiso 		 );
-tree->Branch("Electron_HoE"            	   ,&Electron_HoE 		 );
-tree->Branch("Electron_sigmaietaieta"       ,&Electron_sigmaietaieta 	 );
- tree->Branch("Electron_dphiin"              ,&Electron_dphiin 		 );
- tree->Branch("Electron_detain"              ,&Electron_detain 		 );
- tree->Branch("Electron_mHits"               ,&Electron_mHits 		 );
- tree->Branch("Electron_ooEMOop"             ,&Electron_ooEMOop  		 );
+  tree->Branch("Electron_tkiso"               ,&Electron_tkiso 		 );
+  tree->Branch("Electron_HoE"            	   ,&Electron_HoE 		 );
+  tree->Branch("Electron_sigmaietaieta"       ,&Electron_sigmaietaieta 	 );
+  tree->Branch("Electron_dphiin"              ,&Electron_dphiin 		 );
+  tree->Branch("Electron_detain"              ,&Electron_detain 		 );
+  tree->Branch("Electron_mHits"               ,&Electron_mHits 		 );
+  tree->Branch("Electron_ooEMOop"             ,&Electron_ooEMOop  		 );
 
   //Photons
   tree->Branch("n_pho"            	   ,&n_pho 			, "n_pho/i"		);
@@ -466,7 +482,10 @@ void ScoutingNanoAOD::analyze(const edm::Event& iEvent, const edm::EventSetup& i
   // Handles to the EDM content
   edm::Handle<edm::TriggerResults> triggerResultsH;
   iEvent.getByToken(triggerResultsToken, triggerResultsH);
-    
+
+  Handle<vector<Run3ScoutingVertex> > verticesH;
+  iEvent.getByToken(verticesToken, verticesH);   
+ 
   Handle<vector<Run3ScoutingElectron> > electronsH;
   iEvent.getByToken(electronsToken, electronsH);
 
@@ -503,6 +522,23 @@ void ScoutingNanoAOD::analyze(const edm::Event& iEvent, const edm::EventSetup& i
     if (i == 0  && triggerResultsH->accept(triggerPathsMap[triggerPathsVector[i]])) trig +=   1; // pass scouting
     if (i == 1  && triggerResultsH->accept(triggerPathsMap[triggerPathsVector[i]])) trig +=   2; // DST_DoubleMu3_Mass10_CaloScouting_PFScouting
   }
+
+
+//vertex info
+
+    nvtx = 0;
+    for (auto vtx_iter = verticesH->begin(); vtx_iter != verticesH->end(); ++vtx_iter) {
+        nvtx++;
+	vtxX.push_back(vtx_iter->x());        
+	vtxY.push_back(vtx_iter->y());        
+	vtxZ.push_back(vtx_iter->z());
+	vtxXError.push_back(vtx_iter->xError());        
+	vtxYError.push_back(vtx_iter->yError());        
+	vtxZError.push_back(vtx_iter->zError());        
+	vtxChi2.push_back(vtx_iter->chi2());        
+	vtxNdof.push_back(vtx_iter->ndof());        
+    }
+
   
 //  Jet_constituents.clear();
   //0.1396
@@ -644,7 +680,6 @@ for (auto muons_iter = muonsH->begin(); muons_iter != muonsH->end(); ++muons_ite
     n_mu++;
  }
 
-
   n_jet = 0;
    for (auto pfjets_iter = pfjetsH->begin(); pfjets_iter != pfjetsH->end(); ++pfjets_iter) {
     Jet_pt.push_back(pfjets_iter->pt());
@@ -732,7 +767,7 @@ for (auto muons_iter = muonsH->begin(); muons_iter != muonsH->end(); ++muons_ite
 	cout << "L1 bit number = " << r << " ; L1 bit name = " << name << endl;
 	}
      */
-    cout << "l1seed=" << l1Seeds_.size() <<endl;
+    //cout << "l1seed=" << l1Seeds_.size() <<endl;
     for( unsigned int iseed = 0; iseed < l1Seeds_.size(); iseed++ ) {
       bool l1htbit = 0;	
 			
@@ -743,13 +778,20 @@ for (auto muons_iter = muonsH->begin(); muons_iter != muonsH->end(); ++muons_ite
  }
 
  
-
- tree->Fill();	
+ if(n_mu>=2) tree->Fill();	
  clearVars();
 	
 }
 
 void ScoutingNanoAOD::clearVars(){
+  vtxX.clear();
+  vtxY.clear();
+  vtxZ.clear();
+  vtxXError.clear();
+  vtxYError.clear();
+  vtxZError.clear();
+  vtxNdof.clear();
+  vtxChi2.clear();
   Photon_pt.clear();
   Photon_eta.clear();
   Photon_phi.clear();
