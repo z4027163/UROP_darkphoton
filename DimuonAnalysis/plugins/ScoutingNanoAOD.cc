@@ -222,7 +222,7 @@ private:
   vector<Float16_t> 	Muon_dz;
   vector<Float16_t> 	Muon_nvalidmuon_hits;
   vector<Float16_t> 	Muon_nvalidpixelhits;
-  
+  vector<Float16_t>     Muon_ntrackerlayers; 
   vector<Float16_t> 	Muon_nmatchedstations;
   vector<Float16_t>       Muon_type;
   vector<Float16_t>       Muon_nvalidstriphits;
@@ -408,7 +408,7 @@ ScoutingNanoAOD::ScoutingNanoAOD(const edm::ParameterSet& iConfig):
   tree->Branch("Muon_dz", &Muon_dz	);
   tree->Branch("Muon_nvalidmuon_hits", &Muon_nvalidmuon_hits	);
   tree->Branch("Muon_validpixelhits", &Muon_nvalidpixelhits  );
-  
+  tree->Branch("Muon_ntrackerlayers", &Muon_ntrackerlayers );  
   tree->Branch("Muon_nmatchedstations", &Muon_nmatchedstations	);
   tree->Branch("Muon_type",   &Muon_type    );
   tree->Branch("Muon_nvalidstriphits",    &Muon_nvalidstriphits   );
@@ -654,15 +654,16 @@ for (auto muons_iter = muonsH->begin(); muons_iter != muonsH->end(); ++muons_ite
    	Muon_m.push_back(muons_iter->m());
    	Muon_ecaliso.push_back(muons_iter->ecalIso());
    	Muon_hcaliso.push_back(muons_iter->hcalIso());
-   	Muon_trkiso.push_back(muons_iter->trk_chi2());
-   	Muon_chi2.push_back(muons_iter->trk_ndof());
-   	Muon_ndof.push_back(muons_iter->charge());
-   	Muon_charge.push_back(muons_iter->trk_dxy());
-   	Muon_dxy.push_back(muons_iter->trk_dz());
-   	Muon_dz.push_back(muons_iter->nValidRecoMuonHits());
-   	Muon_nvalidmuon_hits.push_back(muons_iter->nValidPixelHits());
-   	Muon_nvalidpixelhits.push_back(muons_iter->nRecoMuonMatchedStations());
-   	Muon_nmatchedstations.push_back(muons_iter->nTrackerLayersWithMeasurement());
+   	Muon_trkiso.push_back(muons_iter->trackIso());
+   	Muon_chi2.push_back(muons_iter->trk_chi2());
+        Muon_charge.push_back(muons_iter->charge());
+   	Muon_ndof.push_back(muons_iter->trk_ndof());
+   	Muon_dxy.push_back(muons_iter->trk_dxy());
+   	Muon_dz.push_back(muons_iter->trk_dz());
+   	Muon_nvalidmuon_hits.push_back(muons_iter->nValidRecoMuonHits());
+   	Muon_nvalidpixelhits.push_back(muons_iter->nValidPixelHits());
+   	Muon_nmatchedstations.push_back(muons_iter->nRecoMuonMatchedStations());
+   	Muon_ntrackerlayers.push_back(muons_iter->nTrackerLayersWithMeasurement());
     Muon_type.push_back(muons_iter->type());
     Muon_nvalidstriphits.push_back(muons_iter->nValidStripHits());
     Muon_trkqoverp.push_back(muons_iter->trk_qoverp());
@@ -772,7 +773,7 @@ for (auto muons_iter = muonsH->begin(); muons_iter != muonsH->end(); ++muons_ite
       bool l1htbit = 0;	
 			
       l1GtUtils_->getFinalDecisionByName(string(l1Seeds_[iseed]), l1htbit);
-      cout<<string(l1Seeds_[iseed])<<"  "<<l1htbit<<endl;
+      //cout<<string(l1Seeds_[iseed])<<"  "<<l1htbit<<endl;
       l1Result_.push_back( l1htbit );
       }
  }
@@ -831,6 +832,7 @@ void ScoutingNanoAOD::clearVars(){
   Muon_nvalidmuon_hits.clear();
   Muon_nvalidpixelhits.clear();
   Muon_nmatchedstations.clear();
+  Muon_ntrackerlayers.clear();
   Muon_type.clear();
   Muon_nvalidstriphits.clear();
   Muon_trkqoverp.clear();
