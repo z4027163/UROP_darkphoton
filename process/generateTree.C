@@ -9,12 +9,13 @@
 
 using namespace std;
 
-void generateTree(TString inputfilename = "input.root", const char* outfilename = "./intermediate.root", int era=1, bool isMC=false) {
+void generateTree(TString inputfilename = "input.root", const char* outfilename = "./intermediate.root", int era=6, bool isMC=false) {
 
     TFile* outfile = new TFile(outfilename, "RECREATE");
     TTree* outtree = new TTree("tree", "tree");
 
     TFile *inputfile = TFile::Open(inputfilename);
+    TH1F *htotal = (TH1F*)inputfile->Get("mmtree/htotal");
     TTree *intree = inputfile->Get<TTree>("mmtree/tree");
     TTreeReader reader("mmtree/tree", inputfile);
 
@@ -177,8 +178,9 @@ void generateTree(TString inputfilename = "input.root", const char* outfilename 
 
 	outtree->Fill(); 
    }
-    
+     
    outfile->cd();
+   htotal->Write();
    outtree->Write();
    outfile->Close();
 }
