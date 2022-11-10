@@ -15,9 +15,14 @@ eval `scram runtime -sh`
 cd ../../
 
 
-#1 input, 2 output 3,era 4.era int
-xrdcp root://xrootd.cmsaf.mit.edu//$1 input.root
+#1 job ID, #2 era, #3 era int
+idx=0
+while IFS= read -r line
+do
+    xrdcp root://xrootd.cmsaf.mit.edu//$line input.root
+    root -l -b -q generateTree.C\(\"input.root\"\,\"output_$idx.root\"\,$3\)
+    idx=$((idx +1))
+done < list_$1.txt
 
-root -l -b -q generateTree.C\(\"input.root\"\,\"tree_$2.root\"\,$4\)
-
-xrdcp -f tree_$2.root root://submit50.mit.edu//store/user/wangzqe/darkphoton/run3/ntuple/$3/
+hadd tree_$1.root output_*.root
+xrdcp -f tree_$1.root root://submit50.mit.edu//store/user/wangzqe/darkphoton/run3/ntuple/$2/

@@ -1,3 +1,8 @@
-list/make_list.sh  to generate input file list
-make_submit.sh to generate condor script
-script.sh to submit jobs
+get list of input files
+list/make_list.txt
+
+split list (20 in one job)
+list/make_split.txt
+
+generate condor script
+make_submit.sh
