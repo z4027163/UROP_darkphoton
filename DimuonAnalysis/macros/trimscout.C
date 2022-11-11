@@ -9,7 +9,7 @@
 
 using namespace std;
 
-void trimscout(TString inputfilename = "intermediate.root", const char* outfilename = "./output.root", bool isMC=false) {
+void trimscout(TString inputfilename = "intermediate.root", const char* outfilename = "./output_histogram.root", bool isMC=false) {
 
     TFile* outfile = new TFile(outfilename, "RECREATE");
     TTree* outtree = new TTree("tree", "tree");
@@ -28,6 +28,7 @@ void trimscout(TString inputfilename = "intermediate.root", const char* outfilen
     }
 
     TFile *inputfile = TFile::Open(inputfilename);
+    TH1F *htotal = (TH1F*)inputfile->Get("htotal");    
 
     TTreeReader reader("tree", inputfile);
 
@@ -131,5 +132,6 @@ void trimscout(TString inputfilename = "intermediate.root", const char* outfilen
         massforLimit_CatA[j]->Write();
         massforLimit_CatB[j]->Write();
     }
+    htotal->Write();
     outfile->Close();
 }
