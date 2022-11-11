@@ -2,7 +2,8 @@
 #include "RooDataSet.h"
 #include "RooDataHist.h"
 #include "RooGaussian.h"
-#include "RooCrystalBall.h"
+//#include "RooCrystalBall.h"
+#include "RooCBShape.h"
 #include "TCanvas.h"
 #include "RooPlot.h"
 #include "TTree.h"
@@ -69,8 +70,8 @@ void simplefit(){
 
 	   RooFormulaVar res_CB("res_CB", "mean*res_rel", RooArgList(mean, res_rel));
 	   RooFormulaVar res_gau("res_gau", "gau_reso_scale*mean*res_rel", RooArgList(gau_reso_scale, mean, res_rel));
-           RooCrystalBall sig_CB("sig_CB", "sig_CB", x, mean, res_CB, alphaL, n, alphaR, n);
-           //RooDoubleCB sig_CB("sig_CB", "sig_CB", x, mean, res_CB, alphaL, n, alphaR, n);
+           //RooCrystalBall sig_CB("sig_CB", "sig_CB", x, mean, res_CB, alphaL, n, alphaR, n);
+           RooCBShape sig_CB("sig_CB", "sig_CB", x, mean, res_CB, alphaL, n);
 	   RooGaussian sig_gau("sig_gau", "sig_gau", x, mean, res_gau);   
 
 	   RooRealVar exp_const("exp_const", "exp_const", .1, 0., 10.);
@@ -139,7 +140,7 @@ void simplefit(){
 	   if(save_ntuple){
 	      RooWorkspace dpworkspace("dpworkspace", "");      
 	      dpworkspace.import(sig);
-	      dpworkspace.writeToFile("dkk_ws_signal_shape.root"); 
+	      dpworkspace.writeToFile("ws_signal_shape.root"); 
 	      save_ntuple = false; 
 	   }
 
@@ -172,21 +173,24 @@ void simplefit(){
    RooRealVar res_rel1("res_rel1", "res_rel1", 0.01, 0.005, 0.1);
    RooFormulaVar res_CB1("res_CB1", "mean1*res_rel1", RooArgList(mean1, res_rel1));
    RooFormulaVar res_gau1("res_gau1", "gau_reso_scale*mean1*res_rel1", RooArgList(gau_reso_scale, mean1, res_rel1));
-   RooCrystalBall sig_CB1("sig_CB1", "sig_CB1", x, mean1, res_CB1, alphaL, n, alphaR, n);
+   //RooCrystalBall sig_CB1("sig_CB1", "sig_CB1", x, mean1, res_CB1, alphaL, n, alphaR, n);
+   RooCBShape sig_CB1("sig_CB1", "sig_CB1", x, mean1, res_CB1, alphaL, n);
    RooGaussian sig_gau1("sig_gau1", "sig_gau1", x, mean1, res_gau1);
 
    RooRealVar mean2("mean2", "mean2", 10.023, 9.923, 10.123);
    RooRealVar res_rel2("res_rel2", "res_rel2", 0.01, 0.005, 0.1);
    RooFormulaVar res_CB2("res_CB2", "mean2*res_rel2", RooArgList(mean2, res_rel2));
    RooFormulaVar res_gau2("res_gau2", "gau_reso_scale*mean2*res_rel2", RooArgList(gau_reso_scale, mean2, res_rel2));
-   RooCrystalBall sig_CB2("sig_CB2", "sig_CB2", x, mean2, res_CB2, alphaL, n, alphaR, n);
+   //RooCrystalBall sig_CB2("sig_CB2", "sig_CB2", x, mean2, res_CB2, alphaL, n, alphaR, n);
+   RooCBShape sig_CB2("sig_CB2", "sig_CB2", x, mean2, res_CB2, alphaL, n);
    RooGaussian sig_gau2("sig_gau2", "sig_gau2", x, mean2, res_gau2);
 
    RooRealVar mean3("mean3", "mean3", 10.355, 10.255, 10.455);
    RooRealVar res_rel3("res_rel3", "res_rel3", 0.01, 0.005, 0.1);
    RooFormulaVar res_CB3("res_CB3", "mean3*res_rel3", RooArgList(mean3, res_rel3));
    RooFormulaVar res_gau3("res_gau3", "gau_reso_scale*mean3*res_rel3", RooArgList(gau_reso_scale, mean3, res_rel3));
-   RooCrystalBall sig_CB3("sig_CB3", "sig_CB3", x, mean3, res_CB3, alphaL, n, alphaR, n);
+   //RooCrystalBall sig_CB3("sig_CB3", "sig_CB3", x, mean3, res_CB3, alphaL, n, alphaR, n);
+   RooCBShape sig_CB3("sig_CB3", "sig_CB3", x, mean3, res_CB3, alphaL, n);
    RooGaussian sig_gau3("sig_gau3", "sig_gau3", x, mean3, res_gau3);
 
    RooRealVar exp_const("exp_const", "exp_const", .1, 0., 10.);
