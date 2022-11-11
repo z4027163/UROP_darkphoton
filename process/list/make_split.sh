@@ -1,7 +1,11 @@
-cp list$1.txt split$1
-cp rename.sh split$1
-cd split$1
-rm split*.txt
-split -l 20 list$1.txt split
-source rename.sh
-cd ..
+for i in B C D E F
+do
+  mkdir split$i
+  cp list$i.txt split$i
+  cp rename.sh split$i
+  cd split$i
+  rm split*.txt
+  split -l 20 list$i.txt split
+  source rename.sh
+  cd ..
+done
