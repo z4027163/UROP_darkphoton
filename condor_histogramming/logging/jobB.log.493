@@ -1,0 +1,821 @@
+000 (222473.493.000) 2022-11-14 18:06:51 Job submitted from host: <18.12.2.5:9615?addrs=18.12.2.5-9615&alias=SUBMIT04.MIT.EDU&noUDP&sock=schedd_3393398_5b11>
+...
+028 (222473.493.000) 2022-11-14 18:06:51 Job ad information event triggered.
+Cluster = 222473
+EventTime = "2022-11-14T18:06:51.966"
+EventTypeNumber = 28
+JOB_GLIDEIN_ClusterId = "$$(GLIDEIN_ClusterId:Unknown)"
+JOB_GLIDEIN_Entry_Name = "$$(GLIDEIN_Entry_Name:Unknown)"
+JOB_GLIDEIN_Factory = "$$(GLIDEIN_Factory:Unknown)"
+JOB_GLIDEIN_Name = "$$(GLIDEIN_Name:Unknown)"
+JOB_GLIDEIN_ProcId = "$$(GLIDEIN_ProcId:Unknown)"
+JOB_GLIDEIN_Schedd = "$$(GLIDEIN_Schedd:Unknown)"
+JOB_GLIDEIN_Site = "$$(GLIDEIN_Site:Unknown)"
+JOB_GLIDEIN_SiteWMS = "$$(GLIDEIN_SiteWMS:Unknown)"
+JOB_GLIDEIN_SiteWMS_JobId = "$$(GLIDEIN_SiteWMS_JobId:Unknown)"
+JOB_GLIDEIN_SiteWMS_Queue = "$$(GLIDEIN_SiteWMS_Queue:Unknown)"
+JOB_GLIDEIN_SiteWMS_Slot = "$$(GLIDEIN_SiteWMS_Slot:Unknown)"
+JOB_Site = "$$(GLIDEIN_Site:Unknown)"
+MyType = "SubmitEvent"
+Proc = 493
+SubmitHost = "<18.12.2.5:9615?addrs=18.12.2.5-9615&alias=SUBMIT04.MIT.EDU&noUDP&sock=schedd_3393398_5b11>"
+Subproc = 0
+TriggerEventTypeName = "ULOG_SUBMIT"
+TriggerEventTypeNumber = 0
+...
+000 (222475.493.000) 2022-11-14 18:06:59 Job submitted from host: <18.12.2.5:9615?addrs=18.12.2.5-9615&alias=SUBMIT04.MIT.EDU&noUDP&sock=schedd_3393398_5b11>
+...
+028 (222475.493.000) 2022-11-14 18:06:59 Job ad information event triggered.
+Cluster = 222475
+EventTime = "2022-11-14T18:06:59.440"
+EventTypeNumber = 28
+JOB_GLIDEIN_ClusterId = "$$(GLIDEIN_ClusterId:Unknown)"
+JOB_GLIDEIN_Entry_Name = "$$(GLIDEIN_Entry_Name:Unknown)"
+JOB_GLIDEIN_Factory = "$$(GLIDEIN_Factory:Unknown)"
+JOB_GLIDEIN_Name = "$$(GLIDEIN_Name:Unknown)"
+JOB_GLIDEIN_ProcId = "$$(GLIDEIN_ProcId:Unknown)"
+JOB_GLIDEIN_Schedd = "$$(GLIDEIN_Schedd:Unknown)"
+JOB_GLIDEIN_Site = "$$(GLIDEIN_Site:Unknown)"
+JOB_GLIDEIN_SiteWMS = "$$(GLIDEIN_SiteWMS:Unknown)"
+JOB_GLIDEIN_SiteWMS_JobId = "$$(GLIDEIN_SiteWMS_JobId:Unknown)"
+JOB_GLIDEIN_SiteWMS_Queue = "$$(GLIDEIN_SiteWMS_Queue:Unknown)"
+JOB_GLIDEIN_SiteWMS_Slot = "$$(GLIDEIN_SiteWMS_Slot:Unknown)"
+JOB_Site = "$$(GLIDEIN_Site:Unknown)"
+MyType = "SubmitEvent"
+Proc = 493
+SubmitHost = "<18.12.2.5:9615?addrs=18.12.2.5-9615&alias=SUBMIT04.MIT.EDU&noUDP&sock=schedd_3393398_5b11>"
+Subproc = 0
+TriggerEventTypeName = "ULOG_SUBMIT"
+TriggerEventTypeNumber = 0
+...
+040 (222473.493.000) 2022-11-14 18:11:11 Started transferring input files
+	Transferring to host: <18.4.112.150:10227?CCBID=18.4.112.29:9618%3faddrs%3d18.4.112.29-9618%26alias%3dT3SERV009.MIT.EDU%26noUDP%26sock%3dcollector#568952&PrivNet=T3BTCH110.MIT.EDU&addrs=18.4.112.150-10227&noUDP>
+...
+028 (222473.493.000) 2022-11-14 18:11:11 Job ad information event triggered.
+Cluster = 222473
+EventTime = "2022-11-14T18:11:11.831"
+EventTypeNumber = 28
+Host = "<18.4.112.150:10227?CCBID=18.4.112.29:9618%3faddrs%3d18.4.112.29-9618%26alias%3dT3SERV009.MIT.EDU%26noUDP%26sock%3dcollector#568952&PrivNet=T3BTCH110.MIT.EDU&addrs=18.4.112.150-10227&noUDP>"
+JOB_GLIDEIN_ClusterId = "18841"
+JOB_GLIDEIN_Entry_Name = "tier3_mcore"
+JOB_GLIDEIN_Factory = "gfactory_service"
+JOB_GLIDEIN_Name = "gfactory_instance"
+JOB_GLIDEIN_ProcId = "2"
+JOB_GLIDEIN_Schedd = "T3SERV011.MIT.EDU"
+JOB_GLIDEIN_Site = "mit_tier3"
+JOB_GLIDEIN_SiteWMS = "HTCondor"
+JOB_GLIDEIN_SiteWMS_JobId = "3688853.0"
+JOB_GLIDEIN_SiteWMS_Queue = "T3SERV008.MIT.EDU"
+JOB_GLIDEIN_SiteWMS_Slot = "slot1_4@t3btch110.mit.edu"
+JOB_Site = "mit_tier3"
+MyType = "FileTransferEvent"
+Proc = 493
+Subproc = 0
+TriggerEventTypeName = "ULOG_FILE_TRANSFER"
+TriggerEventTypeNumber = 40
+Type = 2
+...
+040 (222473.493.000) 2022-11-14 18:11:11 Finished transferring input files
+...
+028 (222473.493.000) 2022-11-14 18:11:11 Job ad information event triggered.
+Cluster = 222473
+EventTime = "2022-11-14T18:11:11.834"
+EventTypeNumber = 28
+JOB_GLIDEIN_ClusterId = "18841"
+JOB_GLIDEIN_Entry_Name = "tier3_mcore"
+JOB_GLIDEIN_Factory = "gfactory_service"
+JOB_GLIDEIN_Name = "gfactory_instance"
+JOB_GLIDEIN_ProcId = "2"
+JOB_GLIDEIN_Schedd = "T3SERV011.MIT.EDU"
+JOB_GLIDEIN_Site = "mit_tier3"
+JOB_GLIDEIN_SiteWMS = "HTCondor"
+JOB_GLIDEIN_SiteWMS_JobId = "3688853.0"
+JOB_GLIDEIN_SiteWMS_Queue = "T3SERV008.MIT.EDU"
+JOB_GLIDEIN_SiteWMS_Slot = "slot1_4@t3btch110.mit.edu"
+JOB_Site = "mit_tier3"
+MyType = "FileTransferEvent"
+Proc = 493
+Subproc = 0
+TriggerEventTypeName = "ULOG_FILE_TRANSFER"
+TriggerEventTypeNumber = 40
+Type = 3
+...
+001 (222473.493.000) 2022-11-14 18:11:12 Job executing on host: <18.4.112.150:3738?CCBID=18.4.112.29:9618%3faddrs%3d18.4.112.29-9618%26alias%3dT3SERV009.MIT.EDU%26noUDP%26sock%3dcollector#568798&PrivNet=T3BTCH110.MIT.EDU&addrs=18.4.112.150-3738&noUDP>
+...
+028 (222473.493.000) 2022-11-14 18:11:12 Job ad information event triggered.
+Cluster = 222473
+EventTime = "2022-11-14T18:11:12.840"
+EventTypeNumber = 28
+ExecuteHost = "<18.4.112.150:3738?CCBID=18.4.112.29:9618%3faddrs%3d18.4.112.29-9618%26alias%3dT3SERV009.MIT.EDU%26noUDP%26sock%3dcollector#568798&PrivNet=T3BTCH110.MIT.EDU&addrs=18.4.112.150-3738&noUDP>"
+JOB_GLIDEIN_ClusterId = "18841"
+JOB_GLIDEIN_Entry_Name = "tier3_mcore"
+JOB_GLIDEIN_Factory = "gfactory_service"
+JOB_GLIDEIN_Name = "gfactory_instance"
+JOB_GLIDEIN_ProcId = "2"
+JOB_GLIDEIN_Schedd = "T3SERV011.MIT.EDU"
+JOB_GLIDEIN_Site = "mit_tier3"
+JOB_GLIDEIN_SiteWMS = "HTCondor"
+JOB_GLIDEIN_SiteWMS_JobId = "3688853.0"
+JOB_GLIDEIN_SiteWMS_Queue = "T3SERV008.MIT.EDU"
+JOB_GLIDEIN_SiteWMS_Slot = "slot1_4@t3btch110.mit.edu"
+JOB_Site = "mit_tier3"
+MyType = "ExecuteEvent"
+Proc = 493
+Subproc = 0
+TriggerEventTypeName = "ULOG_EXECUTE"
+TriggerEventTypeNumber = 1
+...
+006 (222473.493.000) 2022-11-14 18:11:21 Image size of job updated: 354212
+	3  -  MemoryUsage of job (MB)
+	2696  -  ResidentSetSize of job (KB)
+...
+028 (222473.493.000) 2022-11-14 18:11:21 Job ad information event triggered.
+Cluster = 222473
+EventTime = "2022-11-14T18:11:21.927"
+EventTypeNumber = 28
+JOB_GLIDEIN_ClusterId = "18841"
+JOB_GLIDEIN_Entry_Name = "tier3_mcore"
+JOB_GLIDEIN_Factory = "gfactory_service"
+JOB_GLIDEIN_Name = "gfactory_instance"
+JOB_GLIDEIN_ProcId = "2"
+JOB_GLIDEIN_Schedd = "T3SERV011.MIT.EDU"
+JOB_GLIDEIN_Site = "mit_tier3"
+JOB_GLIDEIN_SiteWMS = "HTCondor"
+JOB_GLIDEIN_SiteWMS_JobId = "3688853.0"
+JOB_GLIDEIN_SiteWMS_Queue = "T3SERV008.MIT.EDU"
+JOB_GLIDEIN_SiteWMS_Slot = "slot1_4@t3btch110.mit.edu"
+JOB_Site = "mit_tier3"
+MemoryUsage = 3
+MyType = "JobImageSizeEvent"
+Proc = 493
+ResidentSetSize = 2696
+Size = 354212
+Subproc = 0
+TriggerEventTypeName = "ULOG_IMAGE_SIZE"
+TriggerEventTypeNumber = 6
+...
+006 (222473.493.000) 2022-11-14 18:11:37 Image size of job updated: 566848
+	3  -  MemoryUsage of job (MB)
+	2696  -  ResidentSetSize of job (KB)
+...
+028 (222473.493.000) 2022-11-14 18:11:37 Job ad information event triggered.
+Cluster = 222473
+EventTime = "2022-11-14T18:11:37.653"
+EventTypeNumber = 28
+JOB_GLIDEIN_ClusterId = "18841"
+JOB_GLIDEIN_Entry_Name = "tier3_mcore"
+JOB_GLIDEIN_Factory = "gfactory_service"
+JOB_GLIDEIN_Name = "gfactory_instance"
+JOB_GLIDEIN_ProcId = "2"
+JOB_GLIDEIN_Schedd = "T3SERV011.MIT.EDU"
+JOB_GLIDEIN_Site = "mit_tier3"
+JOB_GLIDEIN_SiteWMS = "HTCondor"
+JOB_GLIDEIN_SiteWMS_JobId = "3688853.0"
+JOB_GLIDEIN_SiteWMS_Queue = "T3SERV008.MIT.EDU"
+JOB_GLIDEIN_SiteWMS_Slot = "slot1_4@t3btch110.mit.edu"
+JOB_Site = "mit_tier3"
+MemoryUsage = 3
+MyType = "JobImageSizeEvent"
+Proc = 493
+ResidentSetSize = 2696
+Size = 566848
+Subproc = 0
+TriggerEventTypeName = "ULOG_IMAGE_SIZE"
+TriggerEventTypeNumber = 6
+...
+040 (222473.493.000) 2022-11-14 18:11:37 Started transferring output files
+...
+028 (222473.493.000) 2022-11-14 18:11:37 Job ad information event triggered.
+Cluster = 222473
+EventTime = "2022-11-14T18:11:37.664"
+EventTypeNumber = 28
+JOB_GLIDEIN_ClusterId = "18841"
+JOB_GLIDEIN_Entry_Name = "tier3_mcore"
+JOB_GLIDEIN_Factory = "gfactory_service"
+JOB_GLIDEIN_Name = "gfactory_instance"
+JOB_GLIDEIN_ProcId = "2"
+JOB_GLIDEIN_Schedd = "T3SERV011.MIT.EDU"
+JOB_GLIDEIN_Site = "mit_tier3"
+JOB_GLIDEIN_SiteWMS = "HTCondor"
+JOB_GLIDEIN_SiteWMS_JobId = "3688853.0"
+JOB_GLIDEIN_SiteWMS_Queue = "T3SERV008.MIT.EDU"
+JOB_GLIDEIN_SiteWMS_Slot = "slot1_4@t3btch110.mit.edu"
+JOB_Site = "mit_tier3"
+MyType = "FileTransferEvent"
+Proc = 493
+Subproc = 0
+TriggerEventTypeName = "ULOG_FILE_TRANSFER"
+TriggerEventTypeNumber = 40
+Type = 5
+...
+040 (222473.493.000) 2022-11-14 18:11:37 Finished transferring output files
+...
+028 (222473.493.000) 2022-11-14 18:11:37 Job ad information event triggered.
+Cluster = 222473
+EventTime = "2022-11-14T18:11:37.700"
+EventTypeNumber = 28
+JOB_GLIDEIN_ClusterId = "18841"
+JOB_GLIDEIN_Entry_Name = "tier3_mcore"
+JOB_GLIDEIN_Factory = "gfactory_service"
+JOB_GLIDEIN_Name = "gfactory_instance"
+JOB_GLIDEIN_ProcId = "2"
+JOB_GLIDEIN_Schedd = "T3SERV011.MIT.EDU"
+JOB_GLIDEIN_Site = "mit_tier3"
+JOB_GLIDEIN_SiteWMS = "HTCondor"
+JOB_GLIDEIN_SiteWMS_JobId = "3688853.0"
+JOB_GLIDEIN_SiteWMS_Queue = "T3SERV008.MIT.EDU"
+JOB_GLIDEIN_SiteWMS_Slot = "slot1_4@t3btch110.mit.edu"
+JOB_Site = "mit_tier3"
+MyType = "FileTransferEvent"
+Proc = 493
+Subproc = 0
+TriggerEventTypeName = "ULOG_FILE_TRANSFER"
+TriggerEventTypeNumber = 40
+Type = 6
+...
+005 (222473.493.000) 2022-11-14 18:11:37 Job terminated.
+	(1) Normal termination (return value 0)
+		Usr 0 00:00:02, Sys 0 00:00:02  -  Run Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+		Usr 0 00:00:02, Sys 0 00:00:02  -  Total Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Local Usage
+	554874  -  Run Bytes Sent By Job
+	5142  -  Run Bytes Received By Job
+	554874  -  Total Bytes Sent By Job
+	5142  -  Total Bytes Received By Job
+	Partitionable Resources :    Usage  Request Allocated 
+	   Cpus                 :     0.20        1         1 
+	   Disk (KB)            : 32679           1    831405 
+	   Memory (MB)          :     3        1024      1024 
+...
+028 (222473.493.000) 2022-11-14 18:11:37 Job ad information event triggered.
+Cluster = 222473
+Cpus = 1
+CpusUsage = 0.2043051983477515
+Disk = 831405
+DiskUsage = 32679
+EventTime = "2022-11-14T18:11:37.725"
+EventTypeNumber = 28
+JOB_GLIDEIN_ClusterId = "18841"
+JOB_GLIDEIN_Entry_Name = "tier3_mcore"
+JOB_GLIDEIN_Factory = "gfactory_service"
+JOB_GLIDEIN_Name = "gfactory_instance"
+JOB_GLIDEIN_ProcId = "2"
+JOB_GLIDEIN_Schedd = "T3SERV011.MIT.EDU"
+JOB_GLIDEIN_Site = "mit_tier3"
+JOB_GLIDEIN_SiteWMS = "HTCondor"
+JOB_GLIDEIN_SiteWMS_JobId = "3688853.0"
+JOB_GLIDEIN_SiteWMS_Queue = "T3SERV008.MIT.EDU"
+JOB_GLIDEIN_SiteWMS_Slot = "slot1_4@t3btch110.mit.edu"
+JOB_Site = "mit_tier3"
+Memory = 1024
+MemoryUsage = 3
+MyType = "JobTerminatedEvent"
+Proc = 493
+ReceivedBytes = 5142.0
+RequestCpus = 1
+RequestDisk = 1
+RequestMemory = 1024
+ReturnValue = 0
+RunLocalUsage = "Usr 0 00:00:00, Sys 0 00:00:00"
+RunRemoteUsage = "Usr 0 00:00:02, Sys 0 00:00:02"
+SentBytes = 554874.0
+Subproc = 0
+TerminatedNormally = true
+TotalLocalUsage = "Usr 0 00:00:00, Sys 0 00:00:00"
+TotalReceivedBytes = 5142.0
+TotalRemoteUsage = "Usr 0 00:00:02, Sys 0 00:00:02"
+TotalSentBytes = 554874.0
+TriggerEventTypeName = "ULOG_JOB_TERMINATED"
+TriggerEventTypeNumber = 5
+...
+040 (222475.493.000) 2022-11-14 18:12:30 Started transferring input files
+	Transferring to host: <18.4.112.127:38646?CCBID=18.4.112.29:9618%3faddrs%3d18.4.112.29-9618%26alias%3dT3SERV009.MIT.EDU%26noUDP%26sock%3dcollector#570200&PrivNet=T3BTCH087.MIT.EDU&addrs=18.4.112.127-38646&noUDP>
+...
+028 (222475.493.000) 2022-11-14 18:12:30 Job ad information event triggered.
+Cluster = 222475
+EventTime = "2022-11-14T18:12:30.107"
+EventTypeNumber = 28
+Host = "<18.4.112.127:38646?CCBID=18.4.112.29:9618%3faddrs%3d18.4.112.29-9618%26alias%3dT3SERV009.MIT.EDU%26noUDP%26sock%3dcollector#570200&PrivNet=T3BTCH087.MIT.EDU&addrs=18.4.112.127-38646&noUDP>"
+JOB_GLIDEIN_ClusterId = "18838"
+JOB_GLIDEIN_Entry_Name = "tier3"
+JOB_GLIDEIN_Factory = "gfactory_service"
+JOB_GLIDEIN_Name = "gfactory_instance"
+JOB_GLIDEIN_ProcId = "6"
+JOB_GLIDEIN_Schedd = "T3SERV011.MIT.EDU"
+JOB_GLIDEIN_Site = "mit_tier3"
+JOB_GLIDEIN_SiteWMS = "HTCondor"
+JOB_GLIDEIN_SiteWMS_JobId = "3688897.0"
+JOB_GLIDEIN_SiteWMS_Queue = "T3SERV008.MIT.EDU"
+JOB_GLIDEIN_SiteWMS_Slot = "slot1_1@t3btch087.mit.edu"
+JOB_Site = "mit_tier3"
+MyType = "FileTransferEvent"
+Proc = 493
+Subproc = 0
+TriggerEventTypeName = "ULOG_FILE_TRANSFER"
+TriggerEventTypeNumber = 40
+Type = 2
+...
+040 (222475.493.000) 2022-11-14 18:12:30 Finished transferring input files
+...
+028 (222475.493.000) 2022-11-14 18:12:30 Job ad information event triggered.
+Cluster = 222475
+EventTime = "2022-11-14T18:12:30.111"
+EventTypeNumber = 28
+JOB_GLIDEIN_ClusterId = "18838"
+JOB_GLIDEIN_Entry_Name = "tier3"
+JOB_GLIDEIN_Factory = "gfactory_service"
+JOB_GLIDEIN_Name = "gfactory_instance"
+JOB_GLIDEIN_ProcId = "6"
+JOB_GLIDEIN_Schedd = "T3SERV011.MIT.EDU"
+JOB_GLIDEIN_Site = "mit_tier3"
+JOB_GLIDEIN_SiteWMS = "HTCondor"
+JOB_GLIDEIN_SiteWMS_JobId = "3688897.0"
+JOB_GLIDEIN_SiteWMS_Queue = "T3SERV008.MIT.EDU"
+JOB_GLIDEIN_SiteWMS_Slot = "slot1_1@t3btch087.mit.edu"
+JOB_Site = "mit_tier3"
+MyType = "FileTransferEvent"
+Proc = 493
+Subproc = 0
+TriggerEventTypeName = "ULOG_FILE_TRANSFER"
+TriggerEventTypeNumber = 40
+Type = 3
+...
+001 (222475.493.000) 2022-11-14 18:12:31 Job executing on host: <18.4.112.127:32768?CCBID=18.4.112.29:9618%3faddrs%3d18.4.112.29-9618%26alias%3dT3SERV009.MIT.EDU%26noUDP%26sock%3dcollector#568822&PrivNet=T3BTCH087.MIT.EDU&addrs=18.4.112.127-32768&noUDP>
+...
+028 (222475.493.000) 2022-11-14 18:12:31 Job ad information event triggered.
+Cluster = 222475
+EventTime = "2022-11-14T18:12:31.117"
+EventTypeNumber = 28
+ExecuteHost = "<18.4.112.127:32768?CCBID=18.4.112.29:9618%3faddrs%3d18.4.112.29-9618%26alias%3dT3SERV009.MIT.EDU%26noUDP%26sock%3dcollector#568822&PrivNet=T3BTCH087.MIT.EDU&addrs=18.4.112.127-32768&noUDP>"
+JOB_GLIDEIN_ClusterId = "18838"
+JOB_GLIDEIN_Entry_Name = "tier3"
+JOB_GLIDEIN_Factory = "gfactory_service"
+JOB_GLIDEIN_Name = "gfactory_instance"
+JOB_GLIDEIN_ProcId = "6"
+JOB_GLIDEIN_Schedd = "T3SERV011.MIT.EDU"
+JOB_GLIDEIN_Site = "mit_tier3"
+JOB_GLIDEIN_SiteWMS = "HTCondor"
+JOB_GLIDEIN_SiteWMS_JobId = "3688897.0"
+JOB_GLIDEIN_SiteWMS_Queue = "T3SERV008.MIT.EDU"
+JOB_GLIDEIN_SiteWMS_Slot = "slot1_1@t3btch087.mit.edu"
+JOB_Site = "mit_tier3"
+MyType = "ExecuteEvent"
+Proc = 493
+Subproc = 0
+TriggerEventTypeName = "ULOG_EXECUTE"
+TriggerEventTypeNumber = 1
+...
+006 (222475.493.000) 2022-11-14 18:12:39 Image size of job updated: 1
+	3  -  MemoryUsage of job (MB)
+	2760  -  ResidentSetSize of job (KB)
+...
+028 (222475.493.000) 2022-11-14 18:12:39 Job ad information event triggered.
+Cluster = 222475
+EventTime = "2022-11-14T18:12:39.232"
+EventTypeNumber = 28
+JOB_GLIDEIN_ClusterId = "18838"
+JOB_GLIDEIN_Entry_Name = "tier3"
+JOB_GLIDEIN_Factory = "gfactory_service"
+JOB_GLIDEIN_Name = "gfactory_instance"
+JOB_GLIDEIN_ProcId = "6"
+JOB_GLIDEIN_Schedd = "T3SERV011.MIT.EDU"
+JOB_GLIDEIN_Site = "mit_tier3"
+JOB_GLIDEIN_SiteWMS = "HTCondor"
+JOB_GLIDEIN_SiteWMS_JobId = "3688897.0"
+JOB_GLIDEIN_SiteWMS_Queue = "T3SERV008.MIT.EDU"
+JOB_GLIDEIN_SiteWMS_Slot = "slot1_1@t3btch087.mit.edu"
+JOB_Site = "mit_tier3"
+MemoryUsage = 3
+MyType = "JobImageSizeEvent"
+Proc = 493
+ResidentSetSize = 2760
+Size = 1
+Subproc = 0
+TriggerEventTypeName = "ULOG_IMAGE_SIZE"
+TriggerEventTypeNumber = 6
+...
+040 (222475.493.000) 2022-11-14 18:12:41 Started transferring output files
+...
+028 (222475.493.000) 2022-11-14 18:12:41 Job ad information event triggered.
+Cluster = 222475
+EventTime = "2022-11-14T18:12:41.909"
+EventTypeNumber = 28
+JOB_GLIDEIN_ClusterId = "18838"
+JOB_GLIDEIN_Entry_Name = "tier3"
+JOB_GLIDEIN_Factory = "gfactory_service"
+JOB_GLIDEIN_Name = "gfactory_instance"
+JOB_GLIDEIN_ProcId = "6"
+JOB_GLIDEIN_Schedd = "T3SERV011.MIT.EDU"
+JOB_GLIDEIN_Site = "mit_tier3"
+JOB_GLIDEIN_SiteWMS = "HTCondor"
+JOB_GLIDEIN_SiteWMS_JobId = "3688897.0"
+JOB_GLIDEIN_SiteWMS_Queue = "T3SERV008.MIT.EDU"
+JOB_GLIDEIN_SiteWMS_Slot = "slot1_1@t3btch087.mit.edu"
+JOB_Site = "mit_tier3"
+MyType = "FileTransferEvent"
+Proc = 493
+Subproc = 0
+TriggerEventTypeName = "ULOG_FILE_TRANSFER"
+TriggerEventTypeNumber = 40
+Type = 5
+...
+040 (222475.493.000) 2022-11-14 18:12:41 Finished transferring output files
+...
+028 (222475.493.000) 2022-11-14 18:12:41 Job ad information event triggered.
+Cluster = 222475
+EventTime = "2022-11-14T18:12:41.944"
+EventTypeNumber = 28
+JOB_GLIDEIN_ClusterId = "18838"
+JOB_GLIDEIN_Entry_Name = "tier3"
+JOB_GLIDEIN_Factory = "gfactory_service"
+JOB_GLIDEIN_Name = "gfactory_instance"
+JOB_GLIDEIN_ProcId = "6"
+JOB_GLIDEIN_Schedd = "T3SERV011.MIT.EDU"
+JOB_GLIDEIN_Site = "mit_tier3"
+JOB_GLIDEIN_SiteWMS = "HTCondor"
+JOB_GLIDEIN_SiteWMS_JobId = "3688897.0"
+JOB_GLIDEIN_SiteWMS_Queue = "T3SERV008.MIT.EDU"
+JOB_GLIDEIN_SiteWMS_Slot = "slot1_1@t3btch087.mit.edu"
+JOB_Site = "mit_tier3"
+MyType = "FileTransferEvent"
+Proc = 493
+Subproc = 0
+TriggerEventTypeName = "ULOG_FILE_TRANSFER"
+TriggerEventTypeNumber = 40
+Type = 6
+...
+005 (222475.493.000) 2022-11-14 18:12:41 Job terminated.
+	(1) Normal termination (return value 0)
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Local Usage
+	548654  -  Run Bytes Sent By Job
+	5142  -  Run Bytes Received By Job
+	548654  -  Total Bytes Sent By Job
+	5142  -  Total Bytes Received By Job
+	Partitionable Resources :    Usage  Request Allocated 
+	   Cpus                 :        0        1         1 
+	   Disk (KB)            :    44144        1 367388100 
+	   Memory (MB)          :        3     1024     64214 
+...
+028 (222475.493.000) 2022-11-14 18:12:41 Job ad information event triggered.
+Cluster = 222475
+Cpus = 1
+CpusUsage = 0.0
+Disk = 367388100
+DiskUsage = 44144
+EventTime = "2022-11-14T18:12:41.969"
+EventTypeNumber = 28
+JOB_GLIDEIN_ClusterId = "18838"
+JOB_GLIDEIN_Entry_Name = "tier3"
+JOB_GLIDEIN_Factory = "gfactory_service"
+JOB_GLIDEIN_Name = "gfactory_instance"
+JOB_GLIDEIN_ProcId = "6"
+JOB_GLIDEIN_Schedd = "T3SERV011.MIT.EDU"
+JOB_GLIDEIN_Site = "mit_tier3"
+JOB_GLIDEIN_SiteWMS = "HTCondor"
+JOB_GLIDEIN_SiteWMS_JobId = "3688897.0"
+JOB_GLIDEIN_SiteWMS_Queue = "T3SERV008.MIT.EDU"
+JOB_GLIDEIN_SiteWMS_Slot = "slot1_1@t3btch087.mit.edu"
+JOB_Site = "mit_tier3"
+Memory = 64214
+MemoryUsage = 3
+MyType = "JobTerminatedEvent"
+Proc = 493
+ReceivedBytes = 5142.0
+RequestCpus = 1
+RequestDisk = 1
+RequestMemory = 1024
+ReturnValue = 0
+RunLocalUsage = "Usr 0 00:00:00, Sys 0 00:00:00"
+RunRemoteUsage = "Usr 0 00:00:00, Sys 0 00:00:00"
+SentBytes = 548654.0
+Subproc = 0
+TerminatedNormally = true
+TotalLocalUsage = "Usr 0 00:00:00, Sys 0 00:00:00"
+TotalReceivedBytes = 5142.0
+TotalRemoteUsage = "Usr 0 00:00:00, Sys 0 00:00:00"
+TotalSentBytes = 548654.0
+TriggerEventTypeName = "ULOG_JOB_TERMINATED"
+TriggerEventTypeNumber = 5
+...
+000 (222477.493.000) 2022-11-14 19:00:27 Job submitted from host: <18.12.2.5:9615?addrs=18.12.2.5-9615&alias=SUBMIT04.MIT.EDU&noUDP&sock=schedd_3393398_5b11>
+...
+028 (222477.493.000) 2022-11-14 19:00:27 Job ad information event triggered.
+Cluster = 222477
+EventTime = "2022-11-14T19:00:27.740"
+EventTypeNumber = 28
+JOB_GLIDEIN_ClusterId = "$$(GLIDEIN_ClusterId:Unknown)"
+JOB_GLIDEIN_Entry_Name = "$$(GLIDEIN_Entry_Name:Unknown)"
+JOB_GLIDEIN_Factory = "$$(GLIDEIN_Factory:Unknown)"
+JOB_GLIDEIN_Name = "$$(GLIDEIN_Name:Unknown)"
+JOB_GLIDEIN_ProcId = "$$(GLIDEIN_ProcId:Unknown)"
+JOB_GLIDEIN_Schedd = "$$(GLIDEIN_Schedd:Unknown)"
+JOB_GLIDEIN_Site = "$$(GLIDEIN_Site:Unknown)"
+JOB_GLIDEIN_SiteWMS = "$$(GLIDEIN_SiteWMS:Unknown)"
+JOB_GLIDEIN_SiteWMS_JobId = "$$(GLIDEIN_SiteWMS_JobId:Unknown)"
+JOB_GLIDEIN_SiteWMS_Queue = "$$(GLIDEIN_SiteWMS_Queue:Unknown)"
+JOB_GLIDEIN_SiteWMS_Slot = "$$(GLIDEIN_SiteWMS_Slot:Unknown)"
+JOB_Site = "$$(GLIDEIN_Site:Unknown)"
+MyType = "SubmitEvent"
+Proc = 493
+SubmitHost = "<18.12.2.5:9615?addrs=18.12.2.5-9615&alias=SUBMIT04.MIT.EDU&noUDP&sock=schedd_3393398_5b11>"
+Subproc = 0
+TriggerEventTypeName = "ULOG_SUBMIT"
+TriggerEventTypeNumber = 0
+...
+000 (222479.493.000) 2022-11-14 19:00:35 Job submitted from host: <18.12.2.5:9615?addrs=18.12.2.5-9615&alias=SUBMIT04.MIT.EDU&noUDP&sock=schedd_3393398_5b11>
+...
+028 (222479.493.000) 2022-11-14 19:00:35 Job ad information event triggered.
+Cluster = 222479
+EventTime = "2022-11-14T19:00:35.359"
+EventTypeNumber = 28
+JOB_GLIDEIN_ClusterId = "$$(GLIDEIN_ClusterId:Unknown)"
+JOB_GLIDEIN_Entry_Name = "$$(GLIDEIN_Entry_Name:Unknown)"
+JOB_GLIDEIN_Factory = "$$(GLIDEIN_Factory:Unknown)"
+JOB_GLIDEIN_Name = "$$(GLIDEIN_Name:Unknown)"
+JOB_GLIDEIN_ProcId = "$$(GLIDEIN_ProcId:Unknown)"
+JOB_GLIDEIN_Schedd = "$$(GLIDEIN_Schedd:Unknown)"
+JOB_GLIDEIN_Site = "$$(GLIDEIN_Site:Unknown)"
+JOB_GLIDEIN_SiteWMS = "$$(GLIDEIN_SiteWMS:Unknown)"
+JOB_GLIDEIN_SiteWMS_JobId = "$$(GLIDEIN_SiteWMS_JobId:Unknown)"
+JOB_GLIDEIN_SiteWMS_Queue = "$$(GLIDEIN_SiteWMS_Queue:Unknown)"
+JOB_GLIDEIN_SiteWMS_Slot = "$$(GLIDEIN_SiteWMS_Slot:Unknown)"
+JOB_Site = "$$(GLIDEIN_Site:Unknown)"
+MyType = "SubmitEvent"
+Proc = 493
+SubmitHost = "<18.12.2.5:9615?addrs=18.12.2.5-9615&alias=SUBMIT04.MIT.EDU&noUDP&sock=schedd_3393398_5b11>"
+Subproc = 0
+TriggerEventTypeName = "ULOG_SUBMIT"
+TriggerEventTypeNumber = 0
+...
+040 (222477.493.000) 2022-11-14 19:03:26 Started transferring input files
+	Transferring to host: <18.4.112.143:44967?CCBID=18.4.112.29:9618%3faddrs%3d18.4.112.29-9618%26alias%3dT3SERV009.MIT.EDU%26noUDP%26sock%3dcollector#572428&PrivNet=T3BTCH103.MIT.EDU&addrs=18.4.112.143-44967&noUDP>
+...
+028 (222477.493.000) 2022-11-14 19:03:26 Job ad information event triggered.
+Cluster = 222477
+EventTime = "2022-11-14T19:03:26.245"
+EventTypeNumber = 28
+Host = "<18.4.112.143:44967?CCBID=18.4.112.29:9618%3faddrs%3d18.4.112.29-9618%26alias%3dT3SERV009.MIT.EDU%26noUDP%26sock%3dcollector#572428&PrivNet=T3BTCH103.MIT.EDU&addrs=18.4.112.143-44967&noUDP>"
+JOB_GLIDEIN_ClusterId = "18867"
+JOB_GLIDEIN_Entry_Name = "tier3"
+JOB_GLIDEIN_Factory = "gfactory_service"
+JOB_GLIDEIN_Name = "gfactory_instance"
+JOB_GLIDEIN_ProcId = "2"
+JOB_GLIDEIN_Schedd = "T3SERV011.MIT.EDU"
+JOB_GLIDEIN_Site = "mit_tier3"
+JOB_GLIDEIN_SiteWMS = "HTCondor"
+JOB_GLIDEIN_SiteWMS_JobId = "3689087.0"
+JOB_GLIDEIN_SiteWMS_Queue = "T3SERV008.MIT.EDU"
+JOB_GLIDEIN_SiteWMS_Slot = "slot1_4@t3btch103.mit.edu"
+JOB_Site = "mit_tier3"
+MyType = "FileTransferEvent"
+Proc = 493
+Subproc = 0
+TriggerEventTypeName = "ULOG_FILE_TRANSFER"
+TriggerEventTypeNumber = 40
+Type = 2
+...
+040 (222477.493.000) 2022-11-14 19:03:26 Finished transferring input files
+...
+028 (222477.493.000) 2022-11-14 19:03:26 Job ad information event triggered.
+Cluster = 222477
+EventTime = "2022-11-14T19:03:26.249"
+EventTypeNumber = 28
+JOB_GLIDEIN_ClusterId = "18867"
+JOB_GLIDEIN_Entry_Name = "tier3"
+JOB_GLIDEIN_Factory = "gfactory_service"
+JOB_GLIDEIN_Name = "gfactory_instance"
+JOB_GLIDEIN_ProcId = "2"
+JOB_GLIDEIN_Schedd = "T3SERV011.MIT.EDU"
+JOB_GLIDEIN_Site = "mit_tier3"
+JOB_GLIDEIN_SiteWMS = "HTCondor"
+JOB_GLIDEIN_SiteWMS_JobId = "3689087.0"
+JOB_GLIDEIN_SiteWMS_Queue = "T3SERV008.MIT.EDU"
+JOB_GLIDEIN_SiteWMS_Slot = "slot1_4@t3btch103.mit.edu"
+JOB_Site = "mit_tier3"
+MyType = "FileTransferEvent"
+Proc = 493
+Subproc = 0
+TriggerEventTypeName = "ULOG_FILE_TRANSFER"
+TriggerEventTypeNumber = 40
+Type = 3
+...
+001 (222477.493.000) 2022-11-14 19:03:27 Job executing on host: <18.4.112.143:43950?CCBID=18.4.112.29:9618%3faddrs%3d18.4.112.29-9618%26alias%3dT3SERV009.MIT.EDU%26noUDP%26sock%3dcollector#571741&PrivNet=T3BTCH103.MIT.EDU&addrs=18.4.112.143-43950&noUDP>
+...
+028 (222477.493.000) 2022-11-14 19:03:27 Job ad information event triggered.
+Cluster = 222477
+EventTime = "2022-11-14T19:03:27.254"
+EventTypeNumber = 28
+ExecuteHost = "<18.4.112.143:43950?CCBID=18.4.112.29:9618%3faddrs%3d18.4.112.29-9618%26alias%3dT3SERV009.MIT.EDU%26noUDP%26sock%3dcollector#571741&PrivNet=T3BTCH103.MIT.EDU&addrs=18.4.112.143-43950&noUDP>"
+JOB_GLIDEIN_ClusterId = "18867"
+JOB_GLIDEIN_Entry_Name = "tier3"
+JOB_GLIDEIN_Factory = "gfactory_service"
+JOB_GLIDEIN_Name = "gfactory_instance"
+JOB_GLIDEIN_ProcId = "2"
+JOB_GLIDEIN_Schedd = "T3SERV011.MIT.EDU"
+JOB_GLIDEIN_Site = "mit_tier3"
+JOB_GLIDEIN_SiteWMS = "HTCondor"
+JOB_GLIDEIN_SiteWMS_JobId = "3689087.0"
+JOB_GLIDEIN_SiteWMS_Queue = "T3SERV008.MIT.EDU"
+JOB_GLIDEIN_SiteWMS_Slot = "slot1_4@t3btch103.mit.edu"
+JOB_Site = "mit_tier3"
+MyType = "ExecuteEvent"
+Proc = 493
+Subproc = 0
+TriggerEventTypeName = "ULOG_EXECUTE"
+TriggerEventTypeNumber = 1
+...
+006 (222477.493.000) 2022-11-14 19:03:35 Image size of job updated: 1
+	3  -  MemoryUsage of job (MB)
+	2764  -  ResidentSetSize of job (KB)
+...
+028 (222477.493.000) 2022-11-14 19:03:35 Job ad information event triggered.
+Cluster = 222477
+EventTime = "2022-11-14T19:03:35.334"
+EventTypeNumber = 28
+JOB_GLIDEIN_ClusterId = "18867"
+JOB_GLIDEIN_Entry_Name = "tier3"
+JOB_GLIDEIN_Factory = "gfactory_service"
+JOB_GLIDEIN_Name = "gfactory_instance"
+JOB_GLIDEIN_ProcId = "2"
+JOB_GLIDEIN_Schedd = "T3SERV011.MIT.EDU"
+JOB_GLIDEIN_Site = "mit_tier3"
+JOB_GLIDEIN_SiteWMS = "HTCondor"
+JOB_GLIDEIN_SiteWMS_JobId = "3689087.0"
+JOB_GLIDEIN_SiteWMS_Queue = "T3SERV008.MIT.EDU"
+JOB_GLIDEIN_SiteWMS_Slot = "slot1_4@t3btch103.mit.edu"
+JOB_Site = "mit_tier3"
+MemoryUsage = 3
+MyType = "JobImageSizeEvent"
+Proc = 493
+ResidentSetSize = 2764
+Size = 1
+Subproc = 0
+TriggerEventTypeName = "ULOG_IMAGE_SIZE"
+TriggerEventTypeNumber = 6
+...
+006 (222477.493.000) 2022-11-14 19:03:39 Image size of job updated: 543932
+	3  -  MemoryUsage of job (MB)
+	2764  -  ResidentSetSize of job (KB)
+...
+028 (222477.493.000) 2022-11-14 19:03:39 Job ad information event triggered.
+Cluster = 222477
+EventTime = "2022-11-14T19:03:39.856"
+EventTypeNumber = 28
+JOB_GLIDEIN_ClusterId = "18867"
+JOB_GLIDEIN_Entry_Name = "tier3"
+JOB_GLIDEIN_Factory = "gfactory_service"
+JOB_GLIDEIN_Name = "gfactory_instance"
+JOB_GLIDEIN_ProcId = "2"
+JOB_GLIDEIN_Schedd = "T3SERV011.MIT.EDU"
+JOB_GLIDEIN_Site = "mit_tier3"
+JOB_GLIDEIN_SiteWMS = "HTCondor"
+JOB_GLIDEIN_SiteWMS_JobId = "3689087.0"
+JOB_GLIDEIN_SiteWMS_Queue = "T3SERV008.MIT.EDU"
+JOB_GLIDEIN_SiteWMS_Slot = "slot1_4@t3btch103.mit.edu"
+JOB_Site = "mit_tier3"
+MemoryUsage = 3
+MyType = "JobImageSizeEvent"
+Proc = 493
+ResidentSetSize = 2764
+Size = 543932
+Subproc = 0
+TriggerEventTypeName = "ULOG_IMAGE_SIZE"
+TriggerEventTypeNumber = 6
+...
+040 (222477.493.000) 2022-11-14 19:03:39 Started transferring output files
+...
+028 (222477.493.000) 2022-11-14 19:03:39 Job ad information event triggered.
+Cluster = 222477
+EventTime = "2022-11-14T19:03:39.866"
+EventTypeNumber = 28
+JOB_GLIDEIN_ClusterId = "18867"
+JOB_GLIDEIN_Entry_Name = "tier3"
+JOB_GLIDEIN_Factory = "gfactory_service"
+JOB_GLIDEIN_Name = "gfactory_instance"
+JOB_GLIDEIN_ProcId = "2"
+JOB_GLIDEIN_Schedd = "T3SERV011.MIT.EDU"
+JOB_GLIDEIN_Site = "mit_tier3"
+JOB_GLIDEIN_SiteWMS = "HTCondor"
+JOB_GLIDEIN_SiteWMS_JobId = "3689087.0"
+JOB_GLIDEIN_SiteWMS_Queue = "T3SERV008.MIT.EDU"
+JOB_GLIDEIN_SiteWMS_Slot = "slot1_4@t3btch103.mit.edu"
+JOB_Site = "mit_tier3"
+MyType = "FileTransferEvent"
+Proc = 493
+Subproc = 0
+TriggerEventTypeName = "ULOG_FILE_TRANSFER"
+TriggerEventTypeNumber = 40
+Type = 5
+...
+040 (222477.493.000) 2022-11-14 19:03:40 Finished transferring output files
+...
+028 (222477.493.000) 2022-11-14 19:03:40 Job ad information event triggered.
+Cluster = 222477
+EventTime = "2022-11-14T19:03:40.102"
+EventTypeNumber = 28
+JOB_GLIDEIN_ClusterId = "18867"
+JOB_GLIDEIN_Entry_Name = "tier3"
+JOB_GLIDEIN_Factory = "gfactory_service"
+JOB_GLIDEIN_Name = "gfactory_instance"
+JOB_GLIDEIN_ProcId = "2"
+JOB_GLIDEIN_Schedd = "T3SERV011.MIT.EDU"
+JOB_GLIDEIN_Site = "mit_tier3"
+JOB_GLIDEIN_SiteWMS = "HTCondor"
+JOB_GLIDEIN_SiteWMS_JobId = "3689087.0"
+JOB_GLIDEIN_SiteWMS_Queue = "T3SERV008.MIT.EDU"
+JOB_GLIDEIN_SiteWMS_Slot = "slot1_4@t3btch103.mit.edu"
+JOB_Site = "mit_tier3"
+MyType = "FileTransferEvent"
+Proc = 493
+Subproc = 0
+TriggerEventTypeName = "ULOG_FILE_TRANSFER"
+TriggerEventTypeNumber = 40
+Type = 6
+...
+005 (222477.493.000) 2022-11-14 19:03:40 Job terminated.
+	(1) Normal termination (return value 0)
+		Usr 0 00:00:01, Sys 0 00:00:02  -  Run Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+		Usr 0 00:00:01, Sys 0 00:00:02  -  Total Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Local Usage
+	555450  -  Run Bytes Sent By Job
+	5363  -  Run Bytes Received By Job
+	555450  -  Total Bytes Sent By Job
+	5363  -  Total Bytes Received By Job
+	Partitionable Resources :    Usage  Request Allocated 
+	   Cpus                 :        0        1         1 
+	   Disk (KB)            :    42092        1 824225444 
+	   Memory (MB)          :        3     1024     23934 
+...
+028 (222477.493.000) 2022-11-14 19:03:40 Job ad information event triggered.
+Cluster = 222477
+Cpus = 1
+CpusUsage = 0.0
+Disk = 824225444
+DiskUsage = 42092
+EventTime = "2022-11-14T19:03:40.139"
+EventTypeNumber = 28
+JOB_GLIDEIN_ClusterId = "18867"
+JOB_GLIDEIN_Entry_Name = "tier3"
+JOB_GLIDEIN_Factory = "gfactory_service"
+JOB_GLIDEIN_Name = "gfactory_instance"
+JOB_GLIDEIN_ProcId = "2"
+JOB_GLIDEIN_Schedd = "T3SERV011.MIT.EDU"
+JOB_GLIDEIN_Site = "mit_tier3"
+JOB_GLIDEIN_SiteWMS = "HTCondor"
+JOB_GLIDEIN_SiteWMS_JobId = "3689087.0"
+JOB_GLIDEIN_SiteWMS_Queue = "T3SERV008.MIT.EDU"
+JOB_GLIDEIN_SiteWMS_Slot = "slot1_4@t3btch103.mit.edu"
+JOB_Site = "mit_tier3"
+Memory = 23934
+MemoryUsage = 3
+MyType = "JobTerminatedEvent"
+Proc = 493
+ReceivedBytes = 5363.0
+RequestCpus = 1
+RequestDisk = 1
+RequestMemory = 1024
+ReturnValue = 0
+RunLocalUsage = "Usr 0 00:00:00, Sys 0 00:00:00"
+RunRemoteUsage = "Usr 0 00:00:01, Sys 0 00:00:02"
+SentBytes = 555450.0
+Subproc = 0
+TerminatedNormally = true
+TotalLocalUsage = "Usr 0 00:00:00, Sys 0 00:00:00"
+TotalReceivedBytes = 5363.0
+TotalRemoteUsage = "Usr 0 00:00:01, Sys 0 00:00:02"
+TotalSentBytes = 555450.0
+TriggerEventTypeName = "ULOG_JOB_TERMINATED"
+TriggerEventTypeNumber = 5
+...
+040 (222479.493.000) 2022-11-14 19:04:56 Started transferring input files
+	Transferring to host: <18.4.112.140:41046?CCBID=18.4.112.29:9618%3faddrs%3d18.4.112.29-9618%26alias%3dT3SERV009.MIT.EDU%26noUDP%26sock%3dcollector#573868&PrivNet=T3BTCH100.MIT.EDU&addrs=18.4.112.140-41046&noUDP>
+...
+028 (222479.493.000) 2022-11-14 19:04:56 Job ad information event triggered.
+Cluster = 222479
+EventTime = "2022-11-14T19:04:56.331"
+EventTypeNumber = 28
+Host = "<18.4.112.140:41046?CCBID=18.4.112.29:9618%3faddrs%3d18.4.112.29-9618%26alias%3dT3SERV009.MIT.EDU%26noUDP%26sock%3dcollector#573868&PrivNet=T3BTCH100.MIT.EDU&addrs=18.4.112.140-41046&noUDP>"
+JOB_GLIDEIN_ClusterId = "18878"
+JOB_GLIDEIN_Entry_Name = "tier3_mcore"
+JOB_GLIDEIN_Factory = "gfactory_service"
+JOB_GLIDEIN_Name = "gfactory_instance"
+JOB_GLIDEIN_ProcId = "3"
+JOB_GLIDEIN_Schedd = "T3SERV011.MIT.EDU"
+JOB_GLIDEIN_Site = "mit_tier3"
+JOB_GLIDEIN_SiteWMS = "HTCondor"
+JOB_GLIDEIN_SiteWMS_JobId = "3689220.0"
+JOB_GLIDEIN_SiteWMS_Queue = "T3SERV008.MIT.EDU"
+JOB_GLIDEIN_SiteWMS_Slot = "slot1_3@t3btch100.mit.edu"
+JOB_Site = "mit_tier3"
+MyType = "FileTransferEvent"
+Proc = 493
+Subproc = 0
+TriggerEventTypeName = "ULOG_FILE_TRANSFER"
+TriggerEventTypeNumber = 40
+Type = 2
+...

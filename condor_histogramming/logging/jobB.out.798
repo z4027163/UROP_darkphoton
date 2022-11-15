@@ -1,0 +1,13 @@
+ ==== START CONDOR WRAPPER =======================
+ Running on: t3btch108.mit.edu
+ Executing the following command: /condor/execute/dir_3480699/glide_s0UQSS/execute/dir_3488775/condor_exec.exe 798 2022C
+ ==== from this machine
+ OSVERSION:       el7
+ ==== from this jobad
+SingularityImage: 
+REQUIRED_OS:      rhel7
+ ==== EXECUTE CONDOR_WRAPPER ====
+ exec "/condor/execute/dir_3480699/glide_s0UQSS/execute/dir_3488775/condor_exec.exe 798 2022C" 
+
+Processing trimscout.C...
+final showdown count1=0 count2=0 count3=0 count4=0
