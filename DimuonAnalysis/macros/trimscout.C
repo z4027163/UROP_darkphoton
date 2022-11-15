@@ -18,6 +18,7 @@ void trimscout(TString inputfilename = "intermediate.root", const char* outfilen
     float m = 1;
 
     TH1F* massforLimitFull = new TH1F("massforLimitFull","massforLimitFull",4000,0., 120.);
+    TH1F* massforLimitUpsilon = new TH1F("massforLimitUpsilon", "massforLimitUpsilon", 100 , 8.5, 11.4);
     TH1D* massforLimit_CatA[num_mass_regions];
     TH1D* massforLimit_CatB[num_mass_regions];
 
@@ -41,6 +42,9 @@ void trimscout(TString inputfilename = "intermediate.root", const char* outfilen
     TTreeReaderArray<int>          nPixelHits (reader, "nphits"     );
     TTreeReaderArray<int>          nTrkLayers (reader, "ntklayers"      );
     TTreeReaderValue<int>          nmuon  (reader, "nmuon"    );
+    TTreeReaderArray<float>        mva (reader, "mva2" );
+    TTreeReaderValue<float>        IP (reader, "IP");
+    TTreeReaderValue<float>        PVd (reader, "PVd");
 
     int j=0;
     int count[4]={0};
@@ -54,16 +58,20 @@ void trimscout(TString inputfilename = "intermediate.root", const char* outfilen
         if(*nmuon<2) continue;
         count[1]++;
 
+	if (*IP > 3.5) continue;
+	if (*PVd > 0.2 ) continue;	
+
         std::vector<unsigned> goodmuons;
 	//cout << *nmuon << endl;
         for (int i = 0; i < *nmuon; i++) {
             if(mupt[i]<4 || abs(mueta[i])>1.9) continue;
 	    //cout << mupt[i] << endl;
-            if(nPixelHits[i]==0) continue;
-            if(nTrkLayers[i]<=5) continue;
-            if(muTrkChi2[i]>=10) continue;
-            if(RelTrackIso[i]>=.15) continue;
-            goodmuons.push_back(i);
+            //if(nPixelHits[i]==0) continue;
+            //if(nTrkLayers[i]<=5) continue;
+            //if(muTrkChi2[i]>=10) continue;
+            //if(RelTrackIso[i]>=.15) continue;
+            if (mva[i] < -0.1) continue;
+	    goodmuons.push_back(i);
         }
         
         if (goodmuons.size() < 2) continue;
@@ -108,6 +116,9 @@ void trimscout(TString inputfilename = "intermediate.root", const char* outfilen
         count[3]++;
 
         massforLimitFull->Fill(mass, weight);
+	if (mass>=8.5 && mass<=11.2) {
+	    massforLimitUpsilon->Fill(mass, weight);
+	}	
 
 	float maxEta=TMath::Max(abs(m1eta),abs(m2eta));
 	
@@ -128,6 +139,7 @@ void trimscout(TString inputfilename = "intermediate.root", const char* outfilen
 
     outfile->cd();
     massforLimitFull->Write();
+    massforLimitUpsilon->Write();
     for(int j=0; j<num_mass_regions;j++){
         massforLimit_CatA[j]->Write();
         massforLimit_CatB[j]->Write();
