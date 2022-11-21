@@ -158,9 +158,7 @@ void simplefit(){
 
    //Upsilon fitting (hist 229)
    //
-   TH1F *hh = (TH1F*)file->Get(Form("massforLimit_CatA%d",229));
-   TH1F *hB = (TH1F*)file->Get(Form("massforLimit_CatB%d",229));
-   hh->Add(hB);
+   TH1F *hh = (TH1F*)file->Get("massforLimitUpsilon");
    hh->Rebin(4);
 
    double x_min=hh->GetXaxis()->GetXmin();
