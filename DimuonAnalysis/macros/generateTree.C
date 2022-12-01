@@ -9,12 +9,13 @@
 
 using namespace std;
 
-void generateTree(TString inputfilename = "input.root", const char* outfilename = "./intermediate.root", bool isMC=false) {
+void generateTree(TString inputfilename = "input.root", const char* outfilename = "./intermediate.root", int era=6, bool isMC=false) {
 
     TFile* outfile = new TFile(outfilename, "RECREATE");
     TTree* outtree = new TTree("tree", "tree");
 
     TFile *inputfile = TFile::Open(inputfilename);
+    TH1F *htotal = (TH1F*)inputfile->Get("mmtree/htotal");
     TTree *intree = inputfile->Get<TTree>("mmtree/tree");
     TTreeReader reader("mmtree/tree", inputfile);
 
@@ -28,9 +29,17 @@ void generateTree(TString inputfilename = "input.root", const char* outfilename 
     //float BSx = BSxhist.GetMean();
     //float BSy = BSyhist.GetMean();
     //float BSz = BSzhist.GetMean();
+
     float BSx = .2001;
     float BSy = -.2319;
     float BSz = .642;
+    float phi0 = -0.8037;
+    
+    if(era==2){ BSx = 0.1739; BSy=-0.1804; phi0=-0.8037;}
+    if(era==3){ BSx = .170; BSy = -.1761; BSz = .642; phi0=-0.8030;}
+    if(era==5){ BSx = 0.1712;BSy=-0.1747; phi0=-0.7955;}
+    if(era==6){ BSx= 0.170; BSy= -0.178; phi0=-0.8083;}
+     
     cout << "Beam spot position: (" << BSx << "," << BSy << "," << BSz << ")" << endl;
 
     TTreeReaderArray<float>          mpt  (reader, "Muon_pt"    );
@@ -63,6 +72,12 @@ void generateTree(TString inputfilename = "input.root", const char* outfilename 
     TTreeReaderArray<float>          VtxZError (reader, "vtxZError");
     TTreeReaderArray<float>          VtxChi2 (reader, "vtxChi2");
 
+    TTreeReaderArray<float>          Trkqoverp (reader, "Muon_trkqoverp");
+    TTreeReaderArray<float>          Trklambda (reader, "Muon_trklambda");
+    TTreeReaderArray<float>          Trkqoverperror (reader, "Muon_trkqoverperror");
+    TTreeReaderArray<float>          Trklambdaerror (reader, "Muon_trklambdaerror");
+
+
     float charge[4]={0};
     float  mupt[4]    = {0};
     float  mueta[4]   = {0};
@@ -77,6 +92,10 @@ void generateTree(TString inputfilename = "input.root", const char* outfilename 
     float MecalIso[4] = {0};
     float MhcalIso[4] = {0};
     float MtrkIso[4] = {0};
+    float trklambda[4] = {0};
+    float trkqoverp[4] = {0};
+    float trklambdaerror[4] = {0};
+    float trkqoverperror[4] = {0};
     float PVd, IP, vtxErr;
     unsigned run, lumSec; 
     unsigned nvtx;
@@ -114,6 +133,13 @@ void generateTree(TString inputfilename = "input.root", const char* outfilename 
     outtree->Branch("IP",&IP,"IP/F");
     outtree->Branch("vtxErr",&vtxErr,"vtxErr/F");
 
+    outtree->Branch("trkqoverp", &trkqoverp, "trkqoverp[4]/F");
+    outtree->Branch("trklambda", &trklambda, "trklambda[4]/F");
+    outtree->Branch("trkqoverperror", &trkqoverperror, "trkqoverperror[4]/F");
+    outtree->Branch("trklambdaerror", &trklambdaerror, "trklambdaerror[4]/F");
+
+
+    float r0 = sqrt(BSx*BSx+BSy*BSy);
 
     int j=0;
     while(reader.Next()) {
@@ -139,12 +165,18 @@ void generateTree(TString inputfilename = "input.root", const char* outfilename 
 	    muchi[idx]=(chi2)[i]/(ndof)[i];
 	    charge[idx]=(mcharge)[i];
 	    munlayer[idx]=(ntklayers)[i];
-	    Dxy[idx]=(dxy)[i];
+	    
+	    Dxy[idx]=(dxy)[i] + r0*sin((mphi)[i]-phi0);
 	    Dz[idx]=(dz)[i];
 
 	    MecalIso[idx]=(mecaliso)[i];
 	    MhcalIso[idx]=(mhcaliso)[i];
-	    
+	 
+	    trkqoverp[idx] = (Trkqoverp)[i];
+	    trklambda[idx] = (Trklambda)[i];
+	    trkqoverperror[idx] = (Trkqoverperror)[i];
+            trklambdaerror[idx] = (Trklambdaerror)[i];
+   
 	    idx+=1;
 	}
 
@@ -170,8 +202,9 @@ void generateTree(TString inputfilename = "input.root", const char* outfilename 
 
 	outtree->Fill(); 
    }
-    
+     
    outfile->cd();
+   htotal->Write();
    outtree->Write();
    outfile->Close();
 }
