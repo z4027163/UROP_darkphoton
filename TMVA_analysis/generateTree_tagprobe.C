@@ -21,7 +21,7 @@ void generateTree_tagprobe(TString inputfilename = "input.root", const char* out
     //TTree *intree = inputfile->Get<TTree>("mmtree/tree");
     //TTreeReader reader("tree", inputfile);
 
-    TString inputdirectory = "/data/submit/cms/store/user/wangzqe/darkphoton/run3_ntuple/2022E/";
+    TString inputdirectory = "/data/submit/cms/store/user/wangzqe/darkphoton/run3/ntuple/2022E/";
     TChain* inputchain = new TChain();
     inputchain->Add(inputdirectory + "*.root/tree");
     TTreeReader reader(inputchain);
@@ -66,6 +66,11 @@ void generateTree_tagprobe(TString inputfilename = "input.root", const char* out
     TTreeReaderValue<float>           ip (reader, "IP");
     TTreeReaderValue<float>	      vtxerr (reader, "vtxErr");
 
+    TTreeReaderArray<float>           trkqoverp (reader, "trkqoverp");
+    TTreeReaderArray<float>           trklambda (reader, "trklambda"); 
+    TTreeReaderArray<float>           trkqoverperror (reader, "trkqoverperror");
+    TTreeReaderArray<float>           trklambdaerror (reader, "trklambdaerror");  
+
     float  m1pt    = 0.0;        
     float  m1eta   = 0.0;        
     float  m1phi   = 0.0;        
@@ -99,6 +104,7 @@ void generateTree_tagprobe(TString inputfilename = "input.root", const char* out
     float PVd=0;
     float IP=0;
     float vtxErr=0;
+    float m2trkqoverp, m2trklambda, m2trkqoverperror, m2trklambdaerror = 0.0;
 
     bckg_outtree->Branch("m1pt"  , &m1pt  , "m1pt/F"  );
     bckg_outtree->Branch("m1eta" , &m1eta , "m1eta/F" );
@@ -126,6 +132,10 @@ void generateTree_tagprobe(TString inputfilename = "input.root", const char* out
     bckg_outtree->Branch("PVd",&PVd,"PVd/F");
     bckg_outtree->Branch("IP",&IP,"IP/F");
     bckg_outtree->Branch("vtxErr",&vtxErr,"vtxErr/F");
+    bckg_outtree->Branch("trkqoverp", &m2trkqoverp, "trkqoverp/F");
+    bckg_outtree->Branch("trklambda", &m2trklambda, "trklambda/F");
+    bckg_outtree->Branch("trkqoverperror", &m2trkqoverperror, "trkqoverperror/F");
+    bckg_outtree->Branch("trklambdaerror", &m2trklambdaerror, "trklambdaerror/F");
 
     sig_outtree->Branch("m1pt"  , &m1pt  , "m1pt/F"  );
     sig_outtree->Branch("m1eta" , &m1eta , "m1eta/F" );
@@ -153,6 +163,10 @@ void generateTree_tagprobe(TString inputfilename = "input.root", const char* out
     sig_outtree->Branch("PVd",&PVd,"PVd/F");
     sig_outtree->Branch("IP",&IP,"IP/F");
     sig_outtree->Branch("vtxErr",&vtxErr,"vtxErr/F");
+    sig_outtree->Branch("trkqoverp", &m2trkqoverp, "trkqoverp/F");
+    sig_outtree->Branch("trklambda", &m2trklambda, "trklambda/F");
+    sig_outtree->Branch("trkqoverperror", &m2trkqoverperror, "trkqoverperror/F");
+    sig_outtree->Branch("trklambdaerror", &m2trklambdaerror, "trklambdaerror/F");
 
     jpsisig_outtree->Branch("m1pt"  , &m1pt  , "m1pt/F"  );
     jpsisig_outtree->Branch("m1eta" , &m1eta , "m1eta/F" );
@@ -180,6 +194,10 @@ void generateTree_tagprobe(TString inputfilename = "input.root", const char* out
     jpsisig_outtree->Branch("PVd",&PVd,"PVd/F");
     jpsisig_outtree->Branch("IP",&IP,"IP/F");
     jpsisig_outtree->Branch("vtxErr",&vtxErr,"vtxErr/F");
+    jpsisig_outtree->Branch("trkqoverp", &m2trkqoverp, "trkqoverp/F");
+    jpsisig_outtree->Branch("trklambda", &m2trklambda, "trklambda/F");
+    jpsisig_outtree->Branch("trkqoverperror", &m2trkqoverperror, "trkqoverperror/F");
+    jpsisig_outtree->Branch("trklambdaerror", &m2trklambdaerror, "trklambdaerror/F");
 
     upsilon_outtree->Branch("m1pt"  , &m1pt  , "m1pt/F"  );
     upsilon_outtree->Branch("m1eta" , &m1eta , "m1eta/F" );
@@ -207,6 +225,10 @@ void generateTree_tagprobe(TString inputfilename = "input.root", const char* out
     upsilon_outtree->Branch("PVd",&PVd,"PVd/F");
     upsilon_outtree->Branch("IP",&IP,"IP/F");
     upsilon_outtree->Branch("vtxErr",&vtxErr,"vtxErr/F");
+    upsilon_outtree->Branch("trkqoverp", &m2trkqoverp, "trkqoverp/F");
+    upsilon_outtree->Branch("trklambda", &m2trklambda, "trklambda/F");
+    upsilon_outtree->Branch("trkqoverperror", &m2trkqoverperror, "trkqoverperror/F");
+    upsilon_outtree->Branch("trklambdaerror", &m2trklambdaerror, "trklambdaerror/F");
 
     int count1 = 0;
     int count2 = 0;
@@ -291,6 +313,10 @@ void generateTree_tagprobe(TString inputfilename = "input.root", const char* out
         m2mhits=(nmhits)[idx2];
 	m2layer=(ntklayers)[idx2];
         m2chi=(chi2)[idx2];
+        m2trkqoverp = (trkqoverp)[idx2];
+	m2trklambda = (trklambda)[idx2];
+	m2trkqoverperror = (trkqoverperror)[idx2];
+        m2trklambdaerror = (trklambdaerror)[idx2];
 
 	if((tkiso)[idx2]<0.15 && ((nphits)[idx2] > 0) && (ntklayers)[idx2] > 5 && (chi2)[idx2] < 10.) m2id=1;
 	m2ch   = (mcharge)[idx2];

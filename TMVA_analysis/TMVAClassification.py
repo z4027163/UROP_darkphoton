@@ -30,10 +30,11 @@ dataloader.AddVariable("chi")
 dataloader.AddVariable("nphits")
 dataloader.AddVariable("trkiso") 
 dataloader.AddVariable("vtxchi2")
-#dataloader.AddSpectator("mass")
-dataloader.AddVariable("eta")
-dataloader.AddVariable("phi")
-dataloader.AddVariable("pt")
+
+#dataloader.AddVariable("trkqoverperror")
+#dataloader.AddVariable("trklambdaerror")
+#dataloader.AddVariable("dxy")
+#dataloader.AddVariable("dz")
 
 dataloader.AddSignalTree(signal, 1.0)
 dataloader.AddBackgroundTree(background, 1.0)
@@ -44,7 +45,7 @@ dataloader.PrepareTrainingAndTestTree(TCut(''),
  
 # Define model
 model = Sequential()
-model.add(Dense(64, activation='relu', input_dim=8))
+model.add(Dense(64, activation='relu', input_dim=5))
 #model.add(Input(shape=(5)))
 #model.add(Conv1DTranspose(3,3))
 model.add(Flatten())
