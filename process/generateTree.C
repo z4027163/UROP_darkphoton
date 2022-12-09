@@ -35,10 +35,10 @@ void generateTree(TString inputfilename = "input.root", const char* outfilename 
     float BSz = .642;
     float phi0 = -0.8037;
     
-    if(era==2){ BSx = 0.1739; BSy=-0.1804; phi0=-0.8037;}
-    if(era==3){ BSx = .170; BSy = -.1761; BSz = .642; phi0=-0.8030;}
-    if(era==5){ BSx = 0.1712;BSy=-0.1747; phi0=-0.7955;}
-    if(era==6){ BSx= 0.170; BSy= -0.178; phi0=-0.8083;}
+    if(era==2){ BSx = 0.1713; BSy=-0.1819; phi0=-0.8154;}
+    if(era==3){ BSx = 0.1701; BSy = -0.18085; phi0=-0.8160;}
+    if(era==5){ BSx = 0.17061;BSy=-0.1819; phi0=-0.8174;}
+    if(era==6){ BSx= 0.1702; BSy= -0.1794; phi0=-0.8117;}
      
     cout << "Beam spot position: (" << BSx << "," << BSy << "," << BSz << ")" << endl;
 
