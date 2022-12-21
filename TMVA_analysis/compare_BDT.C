@@ -139,7 +139,8 @@ void compare_BDT()
 
    // legend
    Float_t x0L = 0.107,     y0H = 0.899;
-   Float_t dxL = 0.457-x0L, dyH = 0.22;
+   //Float_t dxL = 0.457-x0L, dyH = 0.22;
+   Float_t dxL = .8-x0L, dyH = .22;
    if (type == 2) {
       x0L = 0.15;
       y0H = 1 - y0H + dyH + 0.07;
@@ -161,7 +162,6 @@ void compare_BDT()
    if (type == 3) hNameRef = "invBeffvsSeff";
 
 
-
    // draw empty frame
    TH2F* frame = new TH2F( "frame", ftit, 500, x1, x2, 500, y1, y2 );
    frame->GetXaxis()->SetTitle( xtit );
@@ -178,22 +178,29 @@ void compare_BDT()
 //   TString dir[12]={"upsilon0p03","upsilon0p05","upsilon0p2","upsilon_nocut","upsilon0p03_PVd","upsilon0p05_PVd","upsilon0p2_PVd","upsilon_nocut_PVd","upsilon0p03_IP","upsilon0p05_IP","upsilon0p2_IP","upsilon_nocut_IP"};
 //   TString dir[6]={"mc0p03_noIP","mc0p05_noIP","mc0p2_noIP","mc0p03_IP","mc0p05_IP","mc0p2_IP"}; 
 //   TString dir[6]={"JPsi0p03_noIP","JPsi0p05_noIP","JPsi0p2_noIP","JPsi0p03_IP","JPsi0p05_IP","JPsi0p2_IP"};
-   TString dir[7] = {"dataset_nontklayers", "dataset_nochi", "dataset_nonphits", "dataset_notrklambdaerror", "dataset_notrkqoverperror", "dataset_nodxy", "dataset_notrkiso"};
+//   TString dir[7] = {"dataset_nontklayers", "dataset_nochi", "dataset_nonphits", "dataset_notrklambdaerror", "dataset_notrkqoverperror", "dataset_nodxy", "dataset_notrkiso"};
+  
+//TString variables[7] = {"trkiso", "nphits", "trklambdaerror", "trkqoverperror", "dxy", "ntklayers", "chi"};
+TString variables[7] = {"trkiso", "ntklayers", "chi", "trklambdaerror", "nphits", "trkqoverperror", "dxy"};
+
    for(int i=0; i<7; i++){
       TString color;
-      //TFile *f = new TFile(dir[i]+"/TMVA.root");
-      //TH1 *h = (TH1*)f->Get("Method_BDT/BDT/MVA_BDT_rejBvsS");
       TFile *f = new TFile("TMVA.root");
-      cout <<  dir[i] + "/Method_BDT/BDT/MVA_BDT_rejBvsS" << endl;
-      TH1 *h = (TH1*)f->Get(dir[i] + "/Method_BDT/BDT/MVA_BDT_rejBvsS"); 
-      cout << h << endl;
+      TString name = "variables";
+      for(int j=0; j<i+1; j++) {
+	name += "_" + variables[j];
+      }
+      TH1 *h = (TH1*)f->Get(name + "/Method_BDT/BDT/MVA_BDT_rejBvsS");
+      //cout <<  dir[i] + "/Method_BDT/BDT/MVA_BDT_rejBvsS" << endl;
+      //TH1 *h = (TH1*)f->Get(dir[i] + "/Method_BDT/BDT/MVA_BDT_rejBvsS"); 
+      //cout << h << endl;
       h->SetDirectory(0);
       h->SetLineWidth(3);
       if(i<3) h->SetLineColor(kRed+(i%3));
       else if(i<6) h->SetLineColor(kBlue+(i%3));
       else h->SetLineColor(kYellow+(i%4));
       h->Draw("csame");   
-      legend->AddEntry(h,dir[i],"l");
+      legend->AddEntry(h,name,"l");
    }
    // redraw axes
    frame->Draw("sameaxis");
