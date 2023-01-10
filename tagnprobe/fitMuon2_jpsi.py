@@ -109,6 +109,16 @@ Template = cms.EDAnalyzer("TagProbeFitTreeAnalyzer",
             "Exponential::backgroundFail(mass, lf[0,-5,5])".replace("mass",mass_),
             "efficiency[0.9,0,1]",
             "signalFractionInPassing[0.9]"
+        ),
+        CBGausPlusExpo = cms.vstring(
+            "CBShape::signal1(mass, mean[3.1,3.0,3.2], sigma[0.05,0.02,0.06], alpha[3., 0.5, 5.], n[1, 0.1, 100.])".replace("mass",mass_),
+            #"Chebychev::backgroundPass(mass, {cPass[0,-0.5,0.5], cPass2[0,-0.5,0.5]})",
+            #"Chebychev::backgroundFail(mass, {cFail[0,-0.5,0.5], cFail2[0,-0.5,0.5]})",
+            "Gaussian::signal2(mass, mean[3.1,3.0,3.2], sigma[0.05,0.02,0.1])".replace("mass",mass_),
+            "Exponential::backgroundPass(mass, lp[0,-5,5])".replace("mass",mass_),
+            "Exponential::backgroundFail(mass, lf[0,-5,5])".replace("mass",mass_),
+            "efficiency[0.9,0,1]",
+            "signalFractionInPassing[0.9]"
         )
     ),
     

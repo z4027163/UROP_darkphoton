@@ -9,9 +9,10 @@
 
 using namespace std;
 
-void generateTree_tagprobe(TString inputfilename = "input.root", const char* outfilename = "./input.root", int era=5) {
+void generateTree_tagprobe(int era=5) {
 
-    TFile* outfile = new TFile(outfilename, "RECREATE");
+    TString outfilename = "tagnprobe_input_era";
+    TFile* outfile = new TFile(outfilename + era + ".root", "RECREATE");
     TTree* jpsisig_outtree = new TTree("jpsisig_tree", "jpsisig_tree");
     TTree* upsilon_outtree = new TTree("upsilon_tree", "upsilon_tree");
     TTree* sig_outtree = new TTree("sig_tree", "sig_tree");
@@ -20,8 +21,12 @@ void generateTree_tagprobe(TString inputfilename = "input.root", const char* out
     //TFile *inputfile = TFile::Open(inputfilename);
     //TTree *intree = inputfile->Get<TTree>("mmtree/tree");
     //TTreeReader reader("tree", inputfile);
-
-    TString inputdirectory = "/data/submit/cms/store/user/wangzqe/darkphoton/run3/ntuple/2022E/";
+   
+    TString inputdirectory = "";
+    if(era==2) {inputdirectory = "/data/submit/cms/store/user/wangzqe/darkphoton/run3/ntuple/2022B/";}
+    if(era==3) {inputdirectory = "/data/submit/cms/store/user/wangzqe/darkphoton/run3/ntuple/2022C/";}
+    if(era==5) {inputdirectory = "/data/submit/cms/store/user/wangzqe/darkphoton/run3/ntuple/2022E/";}
+    if(era==6) {inputdirectory = "/data/submit/cms/store/user/wangzqe/darkphoton/run3/ntuple/2022F/";}
     TChain* inputchain = new TChain();
     inputchain->Add(inputdirectory + "*.root/tree");
     TTreeReader reader(inputchain);
@@ -240,7 +245,7 @@ void generateTree_tagprobe(TString inputfilename = "input.root", const char* out
 	if (k%1000000==0) cout << k << " events processed" << endl;
 	k=k+1;	
 
-	//if (k>1000000) break;
+        if (k%20 == 0) continue; //so that we don't use the 5% of the data that was used to train on
 
 	//check for two muons
 	if(*nmuon<2) continue;

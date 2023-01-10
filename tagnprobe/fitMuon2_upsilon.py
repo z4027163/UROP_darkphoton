@@ -119,7 +119,20 @@ Template = cms.EDAnalyzer("TagProbeFitTreeAnalyzer",
             "Exponential::backgroundFail(mass, lf[-0.1,-1,0.1])".replace("mass",mass_),
             "efficiency[0.9,0,1]",
             "signalFractionInPassing[0.9]"
-        )
+        ),
+        CBGausPlusExpo = cms.vstring(
+            "CBShape::signal1(mass, mean1[9.5,9.2,9.7], sigma1[0.2,0.05,0.5], alpha1[3., 0.5, 5.], n1[1, 0.1, 20.])".replace("mass",mass_),
+            "CBShape::signal2(mass, mean2[10,9.7,10.2], sigma2[0.2,0.05,1], alpha2[3., 0.5, 5.], n2[1, 0.05, 20.])".replace("mass",mass_),
+            "CBShape::signal3(mass, mean3[10.4,10.2,10.6], sigma3[0.2,0.05,1], alpha3[3., 0.5, 5.], n3[1, 0.05, 20.])".replace("mass",mass_),
+            "Gaussian::signal1g(mass, mean1g[9.5,9.2,9.7], sigma1g[0.2,0.05,0.5])".replace("mass",mass_),
+            "Gaussian::signal2g(mass, mean2g[10,9.7,10.2], sigma2g[0.2,0.05,1])".replace("mass",mass_),
+            "Gaussian::signal3g(mass, mean3g[10.4,10.2,10.6], sigma3g[0.2,0.05,1])".replace("mass",mass_),
+            "Exponential::backgroundPass(mass, lp[0,-5,5])".replace("mass",mass_),
+            "Exponential::backgroundFail(mass, lf[0,-5,5])".replace("mass",mass_),
+            "SUM::signal(signal1, vFrac1[0.5,0.2,1]*signal2,vFrac2[0.3,0.0,0.6]*signal3)",
+            "efficiency[0.9,0,1]",
+            "signalFractionInPassing[0.9]"
+        ),
     ),
     binnedFit = cms.bool(True),
     binsForFit = cms.uint32(nbins),
