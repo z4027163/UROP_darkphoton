@@ -23,12 +23,12 @@ float dxy_c, trkqoverperror_c, trklambdaerror_c;
 void MVAread(TMVA::Reader *reader, int year=2018, int type=1){
    
    reader->AddVariable( "trkiso", &iso_c );
-   reader->AddVariable( "nphits", &nphits_c );
-   reader->AddVariable( "trklambdaerror", &trklambdaerror_c );
-   reader->AddVariable( "trkqoverperror", &trkqoverperror_c );
-   reader->AddVariable( "dxy", &dxy_c );
    reader->AddVariable( "ntklayers", &nlayer_c );
    reader->AddVariable( "chi", &chi_c );
+   reader->AddVariable( "trklambdaerror", &trklambdaerror_c );
+   reader->AddVariable( "nphits", &nphits_c );
+   reader->AddVariable( "trkqoverperror", &trkqoverperror_c );
+   reader->AddVariable( "dxy", &dxy_c );
 //   reader->AddVariable( "nmhits", &nmhits_c );
 //   reader->AddVariable( "vtxchi2",&vtxchi2_c);
    //if(type>2) reader->AddVariable("PVd",&PVd_c);
@@ -39,7 +39,7 @@ void MVAread(TMVA::Reader *reader, int year=2018, int type=1){
    reader->BookMVA( methodName, weightfile );
 }
 
-void add_mva(string treepath = "input.root", int year=2018) {
+void add_mva(string treepath = "tagnprobe_input_full.root", int year=2018) {
 
    bool debug=false; 
    vector<string> filesToRun;
