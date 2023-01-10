@@ -18,9 +18,11 @@ factory = TMVA.Factory('TMVAClassification', output,
 #if not isfile('tmva_class_example.root'):
 #    call(['curl', '-L', '-O', 'http://root.cern.ch/files/tmva_class_example.root'])
  
-data = TFile.Open('scout_probe.root')
+#data = TFile.Open('scout_probe.root')
+data = TFile.Open('scout_probe_full.root')
 #signal = data.Get('jpsisig_tree')
-signal = data.Get('upsilon_tree')
+#signal = data.Get('upsilon_tree')
+signal = data.Get('sig_tree')
 background = data.Get('bckg_tree')
  
 """dataloader = TMVA.DataLoader('dataset')
@@ -48,7 +50,7 @@ dataloaders = []
 #variables = ["trkiso", "nphits", "trklambdaerror", "trkqoverperror", "dxy", "ntklayers", "chi"]
 variables = ["trkiso", "ntklayers", "chi", "trklambdaerror", "nphits", "trkqoverperror", "dxy"]
 
-for i in range(len(variables)):
+for i in range( len(variables)):
     name = "variables"
     for j in range(i+1):
        name += "_" + variables[j]
@@ -61,7 +63,7 @@ for i in range(len(variables)):
     dataloader.AddSignalTree(signal, 1.0)
     dataloader.AddBackgroundTree(background, 1.0)
     dataloader.PrepareTrainingAndTestTree(TCut(''),
-                                          'nTrain_Signal=30000:nTrain_Background=30000:SplitMode=Random:NormMode=NumEvents:!V')
+                                          'nTrain_Signal=50000:nTrain_Background=50000:SplitMode=Random:NormMode=NumEvents:!V')
     dataloaders.append(dataloader)
 
 # Generate model

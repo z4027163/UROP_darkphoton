@@ -37,7 +37,7 @@ void plot_correlations(TH1D* hist[num_mass_regions-1], TString var_name="dummy",
         canvas->SaveAs(dir + var_name + filetype);
 }
 
-void findCorrelations(TString inputfilename = "scout_probe.root", TString outputfilename = "correlation_outputs.root") {
+void findCorrelations(TString inputfilename = "scout_probe_full.root", TString outputfilename = "correlation_outputs.root") {
 
     TFile *inputfile = TFile::Open(inputfilename);
     TTree *jpsisig_tree = inputfile->Get<TTree>("jpsisig_tree");
