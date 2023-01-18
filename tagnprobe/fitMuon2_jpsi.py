@@ -144,9 +144,10 @@ Template = cms.EDAnalyzer("TagProbeFitTreeAnalyzer",
 if sample == "dataid_test":
     process.TnP_MuonID = Template.clone(
        InputFileNames = cms.vstring(
-                '/work/submit/juliush/UROP_darkphoton/test/CMSSW_12_4_3/src/UROP_darkphoton/tagnprobe/input.root'
+                #'/work/submit/juliush/UROP_darkphoton/test/CMSSW_12_4_3/src/UROP_darkphoton/systematics/tagnprobe_input_full.root'
+                '/work/submit/juliush/UROP_darkphoton/test/CMSSW_12_4_3/src/UROP_darkphoton/tagnprobe/tagnprobe_input_full.root'
             ),
-        InputTreeName = cms.string("sig_tree"),
+        InputTreeName = cms.string("jpsisig_tree"),
         InputDirectoryName = cms.string("tpTree"),
         OutputFileName = cms.string("TnP_MuonISO_%s.root" % scenario),
         Efficiencies = cms.PSet(),

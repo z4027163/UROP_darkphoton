@@ -6,9 +6,11 @@ from optparse import OptionParser
 def FillNumDen(num, den):
 
     if num == "mvaloose":
-        process.TnP_MuonID.Expressions.MvaLooseVar = cms.vstring("MvaLooseVar", "mva2>-0.1", "mva2")
+        process.TnP_MuonID.Expressions.MvaLooseVar = cms.vstring("MvaLooseVar", "mva2>0.0", "mva2")
         process.TnP_MuonID.Cuts.MvaLooseCutid  = cms.vstring("MvaLooseCutid", "MvaLooseVar", "0.5")
-
+    elif num == "classicalloose":
+        process.TnP_MuonID.Expressions.ClassicalLooseVar = cms.vstring("ClassicalLooseVar", "vtxchi2<4.0 && IP<3.5", "vtxchi2", "IP")
+        process.TnP_MuonID.Cuts.ClassicalLooseCutid  = cms.vstring("ClassicalLooseCutid", "ClassicalLooseVar", "0.5")
     if den == "looseid":
         process.TnP_MuonID.Categories.CutBasedIdLoose  = cms.vstring("PassLooseid", "dummy[pass=1,fail=0]")
 
@@ -49,6 +51,7 @@ def FillBin(par):
 #_*_*_*_*_*_*_*_*_*_*_*_*
 iteration = ''
 num = 'mvaloose'
+#num = 'classicalloose'
 den = 'tightPVd'
 par = 'pt_dR'
 #par = 'pt'
@@ -95,7 +98,7 @@ Template = cms.EDAnalyzer("TagProbeFitTreeAnalyzer",
         PVd = cms.vstring("PVd", "0","0.2",""),
         #essential for all den/num
         IP = cms.vstring("IP","0","10",""),
-
+        vtxchi2 = cms.vstring("vtxchi2", "0", "20", "")
 
         ),
 
@@ -156,9 +159,10 @@ Template = cms.EDAnalyzer("TagProbeFitTreeAnalyzer",
 if sample == "dataid_test":
     process.TnP_MuonID = Template.clone(
        InputFileNames = cms.vstring(
-                '/work/submit/juliush/UROP_darkphoton/test/CMSSW_12_4_3/src/UROP_darkphoton/tagnprobe/input.root'
+                '/work/submit/juliush/UROP_darkphoton/test/CMSSW_12_4_3/src/UROP_darkphoton/systematics/tagnprobe_input_full.root'
+                #'/work/submit/juliush/UROP_darkphoton/test/CMSSW_12_4_3/src/UROP_darkphoton/tagnprobe/tagnprobe_input_full.root'
             ),
-        InputTreeName = cms.string("sig_tree"),
+        InputTreeName = cms.string("upsilon_tree_adjusted"),
         InputDirectoryName = cms.string("tpTree"),
         OutputFileName = cms.string("TnP_MuonISO_%s.root" % scenario),
         Efficiencies = cms.PSet(),
@@ -168,9 +172,9 @@ if sample == "dataid_test":
 print("made it here")
 BIN = cms.PSet()
 
-Num_dic = {'looseid':'LooseID', 'mvaIPloose':'MVADrLoose', 'mvaloose':'MVALoose'}
+Num_dic = {'looseid':'LooseID', 'mvaIPloose':'MVADrLoose', 'mvaloose':'MVALoose', 'classicalloose':'ClassicalLoose'}
 Den_dic = {'gentrack':'genTracks','looseid':'LooseID','tightPVd':'tightPVd','tightIP':'tightIP'}
-Sel_dic = {'looseid':'LooseCutid','mvaIPloose':'MvaDrLooseCutid', 'mvaloose':'MvaLooseCutid'}
+Sel_dic = {'looseid':'LooseCutid','mvaIPloose':'MvaDrLooseCutid', 'mvaloose':'MvaLooseCutid', 'classicalloose':'ClassicalLooseCutid'}
 
 
 FillVariables(par)
