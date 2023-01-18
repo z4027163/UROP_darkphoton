@@ -23,13 +23,13 @@ n_samples1 = 10000
 n_samples2 = 12000
 n_bins = 20
 
-x = np.linspace(0, 10, 1000)
+x = np.linspace(0, 10, 100)
 pdf1 = f1(x)/np.sum(f1(x))
 pdf2 = f2(x)/np.sum(f2(x))
 
 y1 = np.random.choice(x, n_samples1, p=pdf1)
 y2 = np.random.choice(x, n_samples2, p=pdf2)
-
+print(y1)
 
 
 hist1, _ = np.histogram(y1, bins = np.linspace(0,5, n_bins))
