@@ -14,6 +14,10 @@
 #include "TDirectory.h"
 #include "TObjArray.h"
 
+
+bool doVtx = true;
+
+
 void SetFrameStyle( TH1* frame, Float_t scale = 1.0 )
    {
       frame->SetLabelOffset( 0.012, "X" );// label offset on x axis
@@ -181,7 +185,9 @@ void compare_BDT()
 //   TString dir[7] = {"dataset_nontklayers", "dataset_nochi", "dataset_nonphits", "dataset_notrklambdaerror", "dataset_notrkqoverperror", "dataset_nodxy", "dataset_notrkiso"};
   
 //TString variables[7] = {"trkiso", "nphits", "trklambdaerror", "trkqoverperror", "dxy", "ntklayers", "chi"};
-TString variables[7] = {"trkiso", "ntklayers", "chi", "trklambdaerror", "nphits", "trkqoverperror", "dxy"};
+   
+   if(!doVtx) { 
+   TString variables[7] = {"trkiso", "ntklayers", "chi", "trklambdaerror", "nphits", "trkqoverperror", "dxy"};
 
    for(int i=0; i<7; i++){
       TString color;
@@ -201,6 +207,24 @@ TString variables[7] = {"trkiso", "ntklayers", "chi", "trklambdaerror", "nphits"
       else h->SetLineColor(kYellow+(i%4));
       h->Draw("csame");   
       legend->AddEntry(h,name,"l");
+   }
+   } else {
+   //TString names[7] = {"variables_vtxchi2", "variables_vtxchi2_PVd", "variables_vtxchi2_PVd_vtxErr", "variables_vtxchi2_IP", "variables_IP_PVd", "variables_vtxchi2_IP_PVd", "variables_vtxchi2_IP_PVd_vtxErr"};
+   TString names[8] = {"reshaped_variables_vtxchi2", "reshaped_variables_vtxchi2_IP", "reshaped_variables_vtxchi2_IP_PVd", "reshaped_variables_vtxchi2_IP_PVd_vtxErr", "variables_vtxchi2", "variables_vtxchi2_IP", "variables_vtxchi2_IP_PVd", "variables_vtxchi2_IP_PVd_vtxErr"};
+
+   for (int i=0; i<8; i++) {
+      cout << names[i] << endl;
+      TFile *f = new TFile("TMVA_vtx_nontailsubtracted.root");
+      TH1 *h = (TH1*)f->Get(names[i] + "/Method_BDT/BDT/MVA_BDT_rejBvsS");
+      h->SetDirectory(0);
+      h->SetLineWidth(3);
+      if(i<3) h->SetLineColor(kRed+(i%3));
+      else if(i<6) h->SetLineColor(kBlue+(i%3));
+      else h->SetLineColor(kYellow+(i%4));
+      h->Draw("csame");
+      legend->AddEntry(h,names[i],"l");
+   }
+
    }
    // redraw axes
    frame->Draw("sameaxis");

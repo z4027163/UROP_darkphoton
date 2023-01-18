@@ -10,25 +10,29 @@ from tensorflow.keras.optimizers import SGD
 TMVA.Tools.Instance()
 TMVA.PyMethodBase.PyInitialize()
  
-output = TFile.Open('TMVA.root', 'RECREATE')
+output = TFile.Open('TMVA_vtx.root', 'UPDATE')
 factory = TMVA.Factory('TMVAClassification', output,
                        '!V:!Silent:Color:DrawProgressBar:Transformations=D,G:AnalysisType=Classification')
  
-# Load data
-#if not isfile('tmva_class_example.root'):
-#    call(['curl', '-L', '-O', 'http://root.cern.ch/files/tmva_class_example.root'])
- 
-#data = TFile.Open('scout_probe.root')
-data = TFile.Open('scout_probe_full.root')
-#signal = data.Get('jpsisig_tree')
+#Load Data 
+#data = TFile.Open('scout_probe_small.root')
 #signal = data.Get('upsilon_tree')
-signal = data.Get('sig_tree')
-background = data.Get('bckg_tree')
- 
-dataloaders = []
-variables = ["trkiso", "ntklayers", "chi", "trklambdaerror", "nphits", "trkqoverperror", "dxy"]
+#background = data.Get('bckg_tree')
+data = TFile.Open("/work/submit/juliush/UROP_darkphoton/test/CMSSW_12_4_3/src/UROP_darkphoton/systematics/tagnprobe_input_era5.root")
+signal = data.Get('tpTree/upsilon_tree')
+background = data.Get('tpTree/bckg_tree')
 
+
+dataloaders = []
+#variables = ["vtxchi2", "PVd", "vtxErr"]
+variables = ["vtxchi2", "IP"]
+#variables = ["IP", "PVd"]
+#variables = ["vtxchi2", "IP", "PVd", "vtxErr"]
+
+#Generate Models
 for i in range( len(variables)):
+    #if i<2:
+    #   continue
     name = "variables"
     for j in range(i+1):
        name += "_" + variables[j]
@@ -41,8 +45,6 @@ for i in range( len(variables)):
                                           'nTrain_Signal=50000:nTrain_Background=50000:SplitMode=Random:NormMode=NumEvents:!V')
     dataloaders.append(dataloader)
 
-# Generate model
- 
 # Define model
 model = Sequential()
 model.add(Dense(64, activation='relu', input_dim=5))
