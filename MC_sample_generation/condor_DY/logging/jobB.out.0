@@ -1,0 +1,421 @@
+ ==== START CONDOR WRAPPER =======================
+ Running on: t3btch010.mit.edu
+ Executing the following command: /condor/execute/dir_18201/glide_PuAWxg/execute/dir_30406/condor_exec.exe 0
+ ==== from this machine
+ OSVERSION:       el7
+ ==== from this jobad
+SingularityImage: 
+REQUIRED_OS:      rhel7
+ ==== EXECUTE CONDOR_WRAPPER ====
+ exec "/condor/execute/dir_18201/glide_PuAWxg/execute/dir_30406/condor_exec.exe 0" 
+1234567
+Choose random PU input file.
+Chose PU File: /wangzqe/run3_pileup/00320c57-165d-49c4-8a18-23d8d153f396.root
+Starting Gen-level production:
+------------------------------
+Number of events =  500
+Number of threads =  1
+Random seed =  1234567
+------------------------------
+WARNING: MCParticlePairFilter : size of some vectors not matching with 2!!
+
+**************************************************************
+ Geant4 version Name: geant4-10-07-patch-02 [MT]   (11-June-2021)
+  << in Multi-threaded mode >> 
+                       Copyright : Geant4 Collaboration
+                      References : NIM A 506 (2003), 250-303
+                                 : IEEE-TNS 53 (2006), 270-278
+                                 : NIM A 835 (2016), 186-225
+                             WWW : http://geant4.org/
+**************************************************************
+
+PersistencyIO    INFO  +++ Set Streamer to dd4hep::OpaqueDataBlock
+DD4hep           WARN  ++ Using globally Geant4 unit system (mm,ns,MeV)
+DD4CMS           INFO  +++ Processing the CMS detector description xml-memory-buffer
+Detector         INFO  *********** Created World volume with size: 101000 101000 450000
+Detector         INFO  +++ Patching names of anonymous shapes....
+DDDefinition     INFO  +++ Finished processing xml-memory-buffer
+DD4hep           WARN  ++ Using globally Geant4 unit system (mm,ns,MeV)
+DD4CMS           INFO  +++ Processing the CMS detector description xml-memory-buffer
+Detector         INFO  *********** Created World volume with size: 101000 101000 450000
+PlacedVolume     INFO  REFLECTION: (x.Cross(y)).Dot(z):       -1 Parent: eregalgo:EFAW [TGeoVolume] Daughter: eregalgo:EHAWR [TGeoVolumeAssembly]
+Detector         INFO  +++ Patching names of anonymous shapes....
+DDDefinition     INFO  +++ Finished processing xml-memory-buffer
+Geant4Converter  INFO  +++  Successfully converted geometry to Geant4.
+
+ *------------------------------------------------------------------------------------* 
+ |                                                                                    | 
+ |  *------------------------------------------------------------------------------*  | 
+ |  |                                                                              |  | 
+ |  |                                                                              |  | 
+ |  |   PPP   Y   Y  TTTTT  H   H  III    A      Welcome to the Lund Monte Carlo!  |  | 
+ |  |   P  P   Y Y     T    H   H   I    A A     This is PYTHIA version 8.306      |  | 
+ |  |   PPP     Y      T    HHHHH   I   AAAAA    Last date of change: 28 Jun 2021  |  | 
+ |  |   P       Y      T    H   H   I   A   A                                      |  | 
+ |  |   P       Y      T    H   H  III  A   A    Now is 25 Jan 2023 at 13:58:19    |  | 
+ |  |                                                                              |  | 
+ |  |   Program documentation and an archive of historic versions is found on:     |  | 
+ |  |                                                                              |  | 
+ |  |                               https://pythia.org/                            |  | 
+ |  |                                                                              |  | 
+ |  |   PYTHIA is authored by a collaboration consisting of:                       |  | 
+ |  |                                                                              |  | 
+ |  |   Christian Bierlich, Nishita Desai, Leif Gellersen, Ilkka Helenius, Philip  |  | 
+ |  |   Ilten, Leif Lönnblad, Stephen Mrenna, Stefan Prestel, Christian Preuss,    |  | 
+ |  |   Torbjörn Sjöstrand, Peter Skands, Marius Utheim and Rob Verheyen.          |  | 
+ |  |                                                                              |  | 
+ |  |   The complete list of authors, including contact information and            |  | 
+ |  |   affiliations, can be found on https://pythia.org/.                         |  | 
+ |  |   Problems or bugs should be reported on email at authors@pythia.org.        |  | 
+ |  |                                                                              |  | 
+ |  |   The main program reference is 'An Introduction to PYTHIA 8.2',             |  | 
+ |  |   T. Sjöstrand et al, Comput. Phys. Commun. 191 (2015) 159                   |  | 
+ |  |   [arXiv:1410.3012 [hep-ph]]                                                 |  | 
+ |  |                                                                              |  | 
+ |  |   The main physics reference is the 'PYTHIA 6.4 Physics and Manual',         |  | 
+ |  |   T. Sjöstrand, S. Mrenna and P. Skands, JHEP05 (2006) 026 [hep-ph/0603175]  |  | 
+ |  |                                                                              |  | 
+ |  |   PYTHIA is released under the GNU General Public Licence version 2 or later.|  | 
+ |  |   Please respect the MCnet Guidelines for Event Generator Authors and Users. |  | 
+ |  |                                                                              |  | 
+ |  |   Disclaimer: this program comes without any guarantees.                     |  | 
+ |  |   Beware of errors and use common sense when interpreting results.           |  | 
+ |  |                                                                              |  | 
+ |  |   Copyright (C) 2021 Torbjörn Sjöstrand                                      |  | 
+ |  |                                                                              |  | 
+ |  |                                                                              |  | 
+ |  *------------------------------------------------------------------------------*  | 
+ |                                                                                    | 
+ *------------------------------------------------------------------------------------* 
+
+
+ *------------------------------------------------------------------------------------* 
+ |                                                                                    | 
+ |  *------------------------------------------------------------------------------*  | 
+ |  |                                                                              |  | 
+ |  |                                                                              |  | 
+ |  |   PPP   Y   Y  TTTTT  H   H  III    A      Welcome to the Lund Monte Carlo!  |  | 
+ |  |   P  P   Y Y     T    H   H   I    A A     This is PYTHIA version 8.306      |  | 
+ |  |   PPP     Y      T    HHHHH   I   AAAAA    Last date of change: 28 Jun 2021  |  | 
+ |  |   P       Y      T    H   H   I   A   A                                      |  | 
+ |  |   P       Y      T    H   H  III  A   A    Now is 25 Jan 2023 at 13:58:23    |  | 
+ |  |                                                                              |  | 
+ |  |   Program documentation and an archive of historic versions is found on:     |  | 
+ |  |                                                                              |  | 
+ |  |                               https://pythia.org/                            |  | 
+ |  |                                                                              |  | 
+ |  |   PYTHIA is authored by a collaboration consisting of:                       |  | 
+ |  |                                                                              |  | 
+ |  |   Christian Bierlich, Nishita Desai, Leif Gellersen, Ilkka Helenius, Philip  |  | 
+ |  |   Ilten, Leif Lönnblad, Stephen Mrenna, Stefan Prestel, Christian Preuss,    |  | 
+ |  |   Torbjörn Sjöstrand, Peter Skands, Marius Utheim and Rob Verheyen.          |  | 
+ |  |                                                                              |  | 
+ |  |   The complete list of authors, including contact information and            |  | 
+ |  |   affiliations, can be found on https://pythia.org/.                         |  | 
+ |  |   Problems or bugs should be reported on email at authors@pythia.org.        |  | 
+ |  |                                                                              |  | 
+ |  |   The main program reference is 'An Introduction to PYTHIA 8.2',             |  | 
+ |  |   T. Sjöstrand et al, Comput. Phys. Commun. 191 (2015) 159                   |  | 
+ |  |   [arXiv:1410.3012 [hep-ph]]                                                 |  | 
+ |  |                                                                              |  | 
+ |  |   The main physics reference is the 'PYTHIA 6.4 Physics and Manual',         |  | 
+ |  |   T. Sjöstrand, S. Mrenna and P. Skands, JHEP05 (2006) 026 [hep-ph/0603175]  |  | 
+ |  |                                                                              |  | 
+ |  |   PYTHIA is released under the GNU General Public Licence version 2 or later.|  | 
+ |  |   Please respect the MCnet Guidelines for Event Generator Authors and Users. |  | 
+ |  |                                                                              |  | 
+ |  |   Disclaimer: this program comes without any guarantees.                     |  | 
+ |  |   Beware of errors and use common sense when interpreting results.           |  | 
+ |  |                                                                              |  | 
+ |  |   Copyright (C) 2021 Torbjörn Sjöstrand                                      |  | 
+ |  |                                                                              |  | 
+ |  |                                                                              |  | 
+ |  *------------------------------------------------------------------------------*  | 
+ |                                                                                    | 
+ *------------------------------------------------------------------------------------* 
+
+
+ *-------  PYTHIA Process Initialization  --------------------------*
+ |                                                                  |
+ | We collide p+ with p+ at a CM energy of 1.360e+04 GeV            |
+ |                                                                  |
+ |------------------------------------------------------------------|
+ |                                                    |             |
+ | Subprocess                                    Code |   Estimated |
+ |                                                    |    max (mb) |
+ |                                                    |             |
+ |------------------------------------------------------------------|
+ |                                                    |             |
+ | f fbar -> f' fbar' (s-channel gamma*/Z0)       224 |   6.766e-04 |
+ |                                                                  |
+ *-------  End PYTHIA Process Initialization -----------------------*
+
+ *-------  PYTHIA Multiparton Interactions Initialization  ---------* 
+ |                                                                  | 
+ |                   sigmaNonDiffractive =    56.87 mb              | 
+ |                                                                  | 
+ |    pT0 =  2.63 gives sigmaInteraction =   323.75 mb: accepted    | 
+ |                                                                  | 
+ *-------  End PYTHIA Multiparton Interactions Initialization  -----* 
+
+ *-------  PYTHIA Flag + Mode + Parm + Word + FVec + MVec + PVec + WVec Settings (changes only)  ------------------* 
+ |                                                                                                                 | 
+ | Name                                          |                      Now |      Default         Min         Max | 
+ |                                               |                          |                                      | 
+ | Beams:eCM                                     |                13600.000 |    14000.000         0.0             | 
+ | Check:epTolErr                                |                0.0100000 |   1.0000e-04                         | 
+ | Main:timesAllowErrors                         |                    10000 |           10           0             | 
+ | Next:numberShowEvent                          |                        0 |            1           0             | 
+ | ParticleDecays:allowPhotonRadiation           |                       on |          off                         | 
+ | PhaseSpace:mHatMax                            |                 60.00000 |     -1.00000                         | 
+ | PhaseSpace:mHatMin                            |                0.0500000 |      4.00000         0.0             | 
+ | SLHA:minMassSM                                |                 1000.000 |    100.00000                         | 
+ | Tune:preferLHAPDF                             |                        2 |            1           0           2 | 
+ | WeakSingleBoson:ffbar2ffbar(s:gmZ)            |                       on |          off                         | 
+ |                                                                                                                 | 
+ *-------  End PYTHIA Flag + Mode + Parm + Word + FVec + MVec + PVec + WVec Settings  -----------------------------* 
+
+ --------  PYTHIA Particle Data Table (changed only)  ------------------------------------------------------------------------------
+ 
+      id   name            antiName         spn chg col      m0        mWidth      mMin       mMax       tau0    res dec ext vis wid
+             no onMode   bRatio   meMode     products 
+
+      23  Z0                                  3   0   0   91.18760    2.50419   10.00000    0.00000  7.87987e-14   1   1   0   0   0
+              0     0   0.1540492    0        1       -1 
+              1     0   0.1194935    0        2       -2 
+              2     0   0.1540386    0        3       -3 
+              3     0   0.1193325    0        4       -4 
+              4     0   0.1523269    0        5       -5 
+              5     0   0.0335480    0       11      -11 
+              6     0   0.0667305    0       12      -12 
+              7     1   0.0335477    0       13      -13 
+              8     0   0.0667305    0       14      -14 
+              9     0   0.0334720    0       15      -15 
+             10     0   0.0667305    0       16      -16 
+
+ --------  End PYTHIA Particle Data Table  -----------------------------------------------------------------------------------------
+
+
+ *-------  PYTHIA Flag + Mode + Parm + Word + FVec + MVec + PVec + WVec Settings (changes only)  ------------------* 
+ |                                                                                                                 | 
+ | Name                                          |                      Now |      Default         Min         Max | 
+ |                                               |                          |                                      | 
+ | Next:numberShowEvent                          |                        0 |            1           0             | 
+ | ParticleDecays:allowPhotonRadiation           |                       on |          off                         | 
+ | ProcessLevel:all                              |                      off |           on                         | 
+ | SLHA:minMassSM                                |                 1000.000 |    100.00000                         | 
+ |                                                                                                                 | 
+ *-------  End PYTHIA Flag + Mode + Parm + Word + FVec + MVec + PVec + WVec Settings  -----------------------------* 
+
+ --------  PYTHIA Particle Data Table (changed only)  ------------------------------------------------------------------------------
+ 
+      id   name            antiName         spn chg col      m0        mWidth      mMin       mMax       tau0    res dec ext vis wid
+             no onMode   bRatio   meMode     products 
+
+ no particle data has been changed from its default value 
+
+ --------  End PYTHIA Particle Data Table  -----------------------------------------------------------------------------------------
+
+
+ --------  PYTHIA Info Listing  ---------------------------------------- 
+ 
+ Beam A: id =   2212, pz =  6.800e+03, e =  6.800e+03, m =  9.383e-01.
+ Beam B: id =   2212, pz = -6.800e+03, e =  6.800e+03, m =  9.383e-01.
+
+ In 1: id =   -2, x =  1.463e-03, pdf =  8.159e-01 at Q2 =  1.178e+02.
+ In 2: id =    2, x =  4.356e-04, pdf =  1.214e+00 at same Q2.
+
+ Subprocess f fbar -> f' fbar' (s-channel gamma*/Z0) with code 224 is 2 -> 2.
+ It has sHat =  1.178e+02,    tHat = -5.980e+01,    uHat = -5.803e+01,
+       pTHat =  5.426e+00,   m3Hat =  1.057e-01,   m4Hat =  1.057e-01,
+    thetaHat =  1.586e+00,  phiHat =  2.038e+00.
+     alphaEM =  7.633e-03,  alphaS =  1.963e-01    at Q2 =  1.178e+02.
+
+ Impact parameter b =  1.214e+00 gives enhancement factor =  2.676e-01.
+ Max pT scale for MPI =  1.360e+04, ISR =  1.360e+04, FSR =  1.360e+04.
+ Number of MPI =     2, ISR =     7, FSRproc =    13, FSRreson =     0.
+
+ --------  End PYTHIA Info Listing  ------------------------------------
+
+ --------  PYTHIA Event Listing  (hard process)  -----------------------------------------------------------------------------------
+ 
+    no         id  name            status     mothers   daughters     colours      p_x        p_y        p_z         e          m 
+     0         90  (system)           -11     0     0     0     0     0     0      0.000      0.000      0.000  13600.000  13600.000
+     1       2212  (p+)               -12     0     0     3     0     0     0      0.000      0.000   6800.000   6800.000      0.938
+     2       2212  (p+)               -12     0     0     4     0     0     0      0.000      0.000  -6800.000   6800.000      0.938
+     3         -2  (ubar)             -21     1     0     5     0     0   101      0.000      0.000      9.945      9.945      0.000
+     4          2  (u)                -21     2     0     5     0   101     0      0.000      0.000     -2.962      2.962      0.000
+     5         23  (Z0)               -22     3     4     6     7     0     0      0.000      0.000      6.983     12.907     10.855
+     6        -13  mu+                 23     5     0     0     0     0     0     -2.444      4.844      3.395      6.401      0.106
+     7         13  mu-                 23     5     0     0     0     0     0      2.444     -4.844      3.588      6.506      0.106
+                                   Charge sum:  0.000           Momentum sum:      0.000      0.000      6.983     12.907     10.855
+
+ --------  End PYTHIA Event Listing  -----------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------
+#                         FastJet release 3.4.0
+#                 M. Cacciari, G.P. Salam and G. Soyez                  
+#     A software package for jet finding and analysis at colliders      
+#                           http://fastjet.fr                           
+#	                                                                      
+# Please cite EPJC72(2012)1896 [arXiv:1111.6097] if you use this package
+# for scientific work and optionally PLB641(2006)57 [hep-ph/0512210].   
+#                                                                       
+# FastJet is provided without warranty under the GNU GPL v2 or higher.  
+# It uses T. Chan's closest pair algorithm, S. Fortune's Voronoi code
+# and 3rd party plugin jet algorithms. See COPYING file for details.
+#--------------------------------------------------------------------------
+ PYTHIA Warning in Pythia::check: energy-momentum not quite conserved  
+ PYTHIA Warning in StringFragmentation::fragmentToJunction: bad convergence junction rest frame  
+
+ *-------  PYTHIA Event and Cross Section Statistics  -------------------------------------------------------------*
+ |                                                                                                                 |
+ | Subprocess                                    Code |            Number of events       |      sigma +- delta    |
+ |                                                    |       Tried   Selected   Accepted |     (estimated) (mb)   |
+ |                                                    |                                   |                        |
+ |-----------------------------------------------------------------------------------------------------------------|
+ |                                                    |                                   |                        |
+ | f fbar -> f' fbar' (s-channel gamma*/Z0)       224 |        2655        500        500 |   1.259e-04  2.999e-06 |
+ |                                                    |                                   |                        |
+ | sum                                                |        2655        500        500 |   1.259e-04  2.999e-06 |
+ |                                                                                                                 |
+ *-------  End PYTHIA Event and Cross Section Statistics ----------------------------------------------------------*
+
+ *-------  PYTHIA Error and Warning Messages Statistics  ----------------------------------------------------------* 
+ |                                                                                                                 | 
+ |  times   message                                                                                                | 
+ |                                                                                                                 | 
+ |      1   Warning in Pythia::check: energy-momentum not quite conserved                                          | 
+ |      4   Warning in StringFragmentation::fragmentToJunction: bad convergence junction rest frame                | 
+ |                                                                                                                 | 
+ *-------  End PYTHIA Error and Warning Messages Statistics  ------------------------------------------------------* 
+
+ *-------  PYTHIA Event and Cross Section Statistics  -------------------------------------------------------------*
+ |                                                                                                                 |
+ | Subprocess                                    Code |            Number of events       |      sigma +- delta    |
+ |                                                    |       Tried   Selected   Accepted |     (estimated) (mb)   |
+ |                                                    |                                   |                        |
+ |-----------------------------------------------------------------------------------------------------------------|
+ |                                                    |                                   |                        |
+ | f fbar -> f' fbar' (s-channel gamma*/Z0)       224 |        2655        500        500 |   1.259e-04  2.999e-06 |
+ |                                                    |                                   |                        |
+ | sum                                                |        2655        500        500 |   1.259e-04  2.999e-06 |
+ |                                                                                                                 |
+ *-------  End PYTHIA Event and Cross Section Statistics ----------------------------------------------------------*
+
+ *-------  PYTHIA Error and Warning Messages Statistics  ----------------------------------------------------------* 
+ |                                                                                                                 | 
+ |  times   message                                                                                                | 
+ |                                                                                                                 | 
+ |      1   Warning in Pythia::check: energy-momentum not quite conserved                                          | 
+ |      4   Warning in StringFragmentation::fragmentToJunction: bad convergence junction rest frame                | 
+ |                                                                                                                 | 
+ *-------  End PYTHIA Error and Warning Messages Statistics  ------------------------------------------------------* 
+At post, CPU service is NOT available.
+DIGI,DATAMIX,L1,DIGI2RAW,HLT:2022v12,ENDJOB
+with DB:
+entry file:DY.root
+Step: DIGI Spec: 
+Step: DATAMIX Spec: 
+Step: L1 Spec: 
+Step: DIGI2RAW Spec: 
+Step: HLT Spec: ['2022v12']
+Step: ENDJOB Spec: 
+customising the process with addMonitoring from Configuration/DataProcessing/Utils
+customising the process with customizeHLTforMC from HLTrigger/Configuration/customizeHLTforMC
+Config file step2_cfg.py created
+PersistencyIO    INFO  +++ Set Streamer to dd4hep::OpaqueDataBlock
+DD4hep           WARN  ++ Using globally Geant4 unit system (mm,ns,MeV)
+DD4CMS           INFO  +++ Processing the CMS detector description xml-memory-buffer
+Detector         INFO  *********** Created World volume with size: 101000 101000 450000
+Detector         INFO  +++ Patching names of anonymous shapes....
+DDDefinition     INFO  +++ Finished processing xml-memory-buffer
+#--------------------------------------------------------------------------
+#                         FastJet release 3.4.0
+#                 M. Cacciari, G.P. Salam and G. Soyez                  
+#     A software package for jet finding and analysis at colliders      
+#                           http://fastjet.fr                           
+#	                                                                      
+# Please cite EPJC72(2012)1896 [arXiv:1111.6097] if you use this package
+# for scientific work and optionally PLB641(2006)57 [hep-ph/0512210].   
+#                                                                       
+# FastJet is provided without warranty under the GNU GPL v2 or higher.  
+# It uses T. Chan's closest pair algorithm, S. Fortune's Voronoi code
+# and 3rd party plugin jet algorithms. See COPYING file for details.
+#--------------------------------------------------------------------------
+At post, CPU service is NOT available.
+RAW2DIGI,L1Reco,RECO,RECOSIM,ENDJOB
+with DB:
+entry file:genSimRaw.root
+Step: RAW2DIGI Spec: 
+Step: L1Reco Spec: 
+Step: RECO Spec: 
+Step: RECOSIM Spec: 
+Step: ENDJOB Spec: 
+customising the process with addMonitoring from Configuration/DataProcessing/Utils
+Config file step3_cfg.py created
+PersistencyIO    INFO  +++ Set Streamer to dd4hep::OpaqueDataBlock
+DD4hep           WARN  ++ Using globally Geant4 unit system (mm,ns,MeV)
+DD4CMS           INFO  +++ Processing the CMS detector description xml-memory-buffer
+Detector         INFO  *********** Created World volume with size: 101000 101000 450000
+Detector         INFO  +++ Patching names of anonymous shapes....
+DDDefinition     INFO  +++ Finished processing xml-memory-buffer
+#--------------------------------------------------------------------------
+#                         FastJet release 3.4.0
+#                 M. Cacciari, G.P. Salam and G. Soyez                  
+#     A software package for jet finding and analysis at colliders      
+#                           http://fastjet.fr                           
+#	                                                                      
+# Please cite EPJC72(2012)1896 [arXiv:1111.6097] if you use this package
+# for scientific work and optionally PLB641(2006)57 [hep-ph/0512210].   
+#                                                                       
+# FastJet is provided without warranty under the GNU GPL v2 or higher.  
+# It uses T. Chan's closest pair algorithm, S. Fortune's Voronoi code
+# and 3rd party plugin jet algorithms. See COPYING file for details.
+#--------------------------------------------------------------------------
+At post, CPU service is NOT available.
+>> Local Products Rules ..... started
+>> Local Products Rules ..... done
+>> Subsystem BigProducts built
+>> Building CMSSW version CMSSW_12_4_3 ----
+>> Entering Package darkphoton/DimuonAnalysis
+>> Creating project symlinks
+Entering library rule at src/darkphoton/DimuonAnalysis/plugins
+>> Compiling edm plugin /condor/execute/dir_18201/glide_PuAWxg/execute/dir_30406/CMSSW_12_4_3/src/darkphoton/DimuonAnalysis/plugins/GenTreeMaker.cc
+>> Compiling edm plugin /condor/execute/dir_18201/glide_PuAWxg/execute/dir_30406/CMSSW_12_4_3/src/darkphoton/DimuonAnalysis/plugins/ScoutingNanoAOD.cc
+>> Compiling edm plugin /condor/execute/dir_18201/glide_PuAWxg/execute/dir_30406/CMSSW_12_4_3/src/darkphoton/DimuonAnalysis/plugins/ScoutingTreeMaker2017.cc
+>> Building  edm plugin tmp/slc7_amd64_gcc10/src/darkphoton/DimuonAnalysis/plugins/darkphotonDimuonAnalysisAuto/libdarkphotonDimuonAnalysisAuto.so
+Leaving library rule at src/darkphoton/DimuonAnalysis/plugins
+@@@@ Running edmWriteConfigs for darkphotonDimuonAnalysisAuto
+--- Registered EDM Plugin: darkphotonDimuonAnalysisAuto
+>> Leaving Package darkphoton/DimuonAnalysis
+>> Package darkphoton/DimuonAnalysis built
+>> Subsystem darkphoton built
+gmake[1]: Entering directory '/condor/execute/dir_18201/glide_PuAWxg/execute/dir_30406/CMSSW_12_4_3'
+>> Local Products Rules ..... started
+>> Local Products Rules ..... done
+@@@@ Refreshing Plugins:edmPluginRefresh
+>> Creating project symlinks
+>> Done generating edm plugin poisoned information
+>> Done python_symlink
+>> Compiling python3 modules cfipython/slc7_amd64_gcc10
+>> Compiling python3 modules python
+>> Compiling python3 modules src/darkphoton/DimuonAnalysis/python
+>> All python modules compiled
+>> Plugins of all types refreshed.
+gmake[1]: Leaving directory '/condor/execute/dir_18201/glide_PuAWxg/execute/dir_30406/CMSSW_12_4_3'
+At post, CPU service is NOT available.
+Current directory: 
+/condor/execute/dir_18201/glide_PuAWxg/execute/dir_30406
+Current files in directory: 
+CMSSW_12_4_3
+DY.root
+DY_cfg.py
+_condor_stderr
+_condor_stdout
+condor_exec.exe
+genSimRaw.root
+output_0.root
+pulist.txt
+scout_AOD.root
+step2_cfg.py
+step3_cfg.py
