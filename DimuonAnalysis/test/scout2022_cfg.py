@@ -92,8 +92,8 @@ process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(10000) )
 process.source = cms.Source("PoolSource",
 	fileNames = cms.untracked.vstring([
 	#'root://cms-xrd-global.cern.ch//store/group/dpg_trigger/comm_trigger/TriggerStudiesGroup/Scouting/Run3/ML_210512/SMS-T1qqqq_TuneCP5_14TeV-pythia8/ML_210512/210519_133149/0000/scouting_1.root'
-        'file:/data/submit/cms/store/user/wangzqe/scouting_run3/input.root'
-	])
+	'file:/data/submit/cms/store/user/wangzqe/darkphoton/run3/aod/DY/aod_1.root',
+        ])
 )
 
 # Load the standard set of configuration modules
